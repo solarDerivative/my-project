@@ -178,3 +178,8 @@ h1{
 	font-style:italic;
 	padding:0 0 5px 0;
 }
+
+.done{
+	color:#ccc;
+	text-decoration: line-through;
+}
