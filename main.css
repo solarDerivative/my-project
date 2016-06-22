@@ -1,0 +1,180 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+h1{
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*custom navbar test*/
+.navbar-custom{
+	background-color:#223355;
+	border-color:#132342;
+}
+
+.navbar-custom .navbar-brand{
+	color:#eceff1;
+	transition-duration:0.25s;
+
+}
+.navbar-custom .navbar-brand:hover, .navbar-custom .navbar-brand:focus{
+	color: #a9a9ef;
+}
+
+.navbar-custom .navbar-text{
+	color: #eceff1;
+}
+
+.navbar-custom .navbar-nav > li > a{
+	color:#eceff1;
+}
+.navbar-custom .navbar-nav > li > a:hover, .navbar-nav > li > a:focus{
+	background-color: #132342;
+	color:#d7dcf6;
+	transition-duration:0.25s;
+}
+
+.navbar-custom .navbar-nav > .link > a, .navbar-custom .navbar-nav > .link > a:hover, .navbar-custom .navbar-nav > .link > a:focus{
+	background-color: #132342;
+}
+
+.navbar-custom .navbar-nav > .active > a, .navbar-custom .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus{
+	background-color:#132342;
+	color:#d7dcf6;
+}
+
+.navbar-custom .navbar-nav > .open > a, .navbar-custom .navbar-nav > .open > a:hover, .navbar-custom .navbar-nav > .open > a:focus{
+	background-color:#132342;
+	color:#d7dcf6;
+}
+/*any of these actually being used? unsure*/
+.navbar-custom .navbar-toggle{
+	border-color:#132342;
+}
+.navbar-custom .navbar-toggle:hover, .navbar-custom .navbar-toggle:focus{
+	background-color: #132342;
+}
+.navbar-custom .navbar-toggle .icon-bar{
+	background-color: #eceff1;
+}
+
+.navbar-custom .navbar-collapse, .navbar-custom .navbar-form{
+	border-color:#eceff1;
+}
+
+.navbar-brand .navbar-footer{
+	background-color:#223355;
+	border-color:#132342;
+	padding:10px 0 10px 0;
+}
+
+@media (max-width: 767px){
+	.navbar-custom .navbar-nav .open .dropdown-menu > li > a{
+		color: #eceff1;
+	}
+
+	.navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus{
+		color: #d7dcf6;
+	}
+
+	.navbar-custom .navbar-nav .open .dropdown-menu > .active > a, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus{
+		background-color:#132342;
+		color:#d7dcf6;
+	}
+}
+.myJumbotron{
+	background-image: url("http://i.imgur.com/Tp7uZPV.jpg");
+	background-size:cover;
+	position:relative;
+}
+.bottomAligned{
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+.myBanner{
+	background:#223355;
+	border-color:#132342;
+	color:#eceff1;
+	padding:5px 0 5px 0;
+	font-size:1.125em;
+}
+
+.myBanner .content{
+	text-align:right;
+}
+
+.myBanner .content > a{
+	color:#a9a9ef;
+}
+.myBanner .content > a:hover, .myBanner .content > a:focus{
+	color:#EDA8E6;
+	transition-duration:0.2s;
+}
+
+
+.myPanel{
+	background: rgba(255, 255, 255, .3);
+	border: 1px solid #14146c;
+	border-radius: 5px;
+	box-shadow:0px 0px 5px #666;
+	margin:3%;
+}
+
+.myPanel .heading{
+	background:#a9a9ef;
+	border-radius: 5px 5px 0 0;
+	color:#14146c;
+	font-weight:700;
+	padding:10px 20px;
+}
+
+.myPanel .body{
+	padding: 10px 10px 5px 20px;
+}
+
+.myPanel:hover{
+	background: rgba(255, 255, 255, .7);
+	box-shadow:0px 0px 7px #001;
+	transition-duration:0.4s;
+}
+
+
+
+.jumbotron .container .headingMain{
+	color:#14146c;
+	text-shadow: #333 1px 1px 5px;
+}
+
+
+
+
+.media .media-heading{
+	color:#14146c;
+	padding:15px 0 0 0;
+}
+
+.media .media-body
+{
+	color:#14146c;
+	padding:10px 0 0 0;
+}
+
+.media .media-left .img-circle:hover{
+	opacity:1;
+}
+.media .media-left .img-circle{
+	border:3px solid #14146c;
+	height:128px;
+	opacity:0.8;
+	transition-duration:0.4s;
+	width:128px;
+}
+
+.footer{
+	color:#a9a9ef;
+	font-style:italic;
+	padding:0 0 5px 0;
+}

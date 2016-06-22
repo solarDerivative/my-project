@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Blog &middot Learning Javascript</title>
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<link rel="stylesheet" href="main.css">
+	</head>
+	<body>
+		<header class="navbar-custom" role="banner">
+			<div class="container">
+				<nav role="navigation">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        	<span class="sr-only">Toggle navigation</span>
+				        	<span class="icon-bar"></span>
+				        	<span class="icon-bar"></span>
+				        	<span class="icon-bar"></span>
+				    	</button>
+				    
+				    	<a class="navbar-brand">My <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Project</a>
+				    </div>
+
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				    	<ul class="nav navbar-nav">
+					        <li><a href="index.html">Home</a></li>
+					        <li class="active"><a href="page2.html">Blog<span class="sr-only">(current)</span></a></li>
+					        <li><a href="page3.html">Sandbox</a></li>
+					        <li class="dropdown">
+					        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+					        	<ul class="dropdown-menu">
+						            <li><a href="#">Action</a></li>
+						            <li><a href="#">Another action</a></li>
+						            <li><a href="#">Something else here</a></li>
+						            <li role="separator" class="divider"></li>
+						            <li><a href="#">Separated link</a></li>
+						            <li role="separator" class="divider"></li>
+						            <li><a href="#">One more separated link</a></li>
+					        	</ul>
+					    	</li>
+				    	</ul>
+					</div><!-- /.navbar-collapse -->
+				</nav>
+			</div>
+		</header>
+
+		<div class="panel-group" id="accordion">
+			<div class="panel myPanel">
+				<div class="heading">
+					<div class="row">
+						<a data-toggle="collapse" data-parent="#accordion" href="#accordionSix">
+							<div class="col-xs-9">I Hate Sand</div>
+							<div class="col-xs-3 text-right">6/7/16 Notes</div>
+						</a>
+					</div>
+				</div>
+				<div id="accordionSix" class="panel-collapse collapse in">
+					<div class="body">
+							<p><em>&emsp;It's course... it's rough... </em></p>
+						<h3>Sandbox</h3>
+							<ul>
+								<li><strong>AND IT GETS EVERYWHERE:</strong> Sandbox usage is now to test JavaScript. Navigating to the Sandbox page now puts the user at the mercy of whatever script I'm learning at the time. Good luck!
+								<li>Removed previous content on page, now has jumbotron which is more or less there to make it a not-blank page</li>
+							</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel myPanel">
+				<div class="heading">
+					<div class="row">
+						<a data-toggle="collapse" data-parent="#accordion" href="#accordionFive">
+							<div class="col-xs-9">Accordion To Some...</div>
+							<div class="col-xs-3 text-right">6/6/16 Notes</div>
+						</a>
+					</div>
+				</div>
+				<div id="accordionFive" class="panel-collapse collapse">
+					<div class="body">
+							<p><em>&emsp;...this is a pretty good feature.</em></p>
+						<h3>Blog</h3>
+							<ul>
+								<li>Accordion base functionality is a-go</li>
+							</ul>
+						<h3>Home</h3>
+							<ul>
+								<li>Added image as jumbotron background</li>
+							</ul>
+						<h3>Global</h3>
+							<ul>
+								<li>Fixed some janky html formatting</li>
+								<li>Horizontal rule added to footer on Blog and Sandbox</li>
+								<li>Opacity added to panel backgrounds</li>
+							</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel myPanel">
+				<div class="heading">
+					<div class="row">
+						<a data-toggle="collapse" data-parent="#accordion" href="#accordionFour">
+							<div class="col-xs-9">Footer? <s>I barely knew her</s></div>
+							<div class="col-xs-3 text-right">6/4/16 Notes</div>
+						</a>
+					</div>
+				</div>
+				<div id="accordionFour" class="panel-collapse collapse">
+					<div class="body">
+						<p><em>From yesterday's notes: "Struggling to implement a "footer" in the style of a banner across the bottom of the jumbotron, may have to make something custom"</em></p>
+						<h3>Home</h3>
+							<ul>
+								<li><strong>Made Something Custom:</strong> Footer functional, snapped to bottom of jumbotron.</li>
+							</ul>
+						<h3>Sandbox</h3>
+							<ul><li><font size="2" color="#C3A771"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span></font><strong> New Page:</strong> The Home and Blog pages are actually starting to shape up so I need a new page to test things without potentially accidentally destroying everything</li>
+							<li><strong>Tone Deaf:</strong> Trying to have accordion class full of panels which will keep only one panel expanded at a time. Open one panel, whatever panel was open before closes. Wondering if I can do this using custom panels without any javascript.</li>
+							</ul>
+						<h3>Global</h3>
+							<ul>
+								<li>Sandbox page added to navbar</li>
+								<li><strong>MY BRAND:</strong> Removed <code>href="#"</code> from "My Project" to set it apart from the links on the navbar</li>
+								<li><strong><span class="glyphicon glyphicon-sunglasses"></span>:</strong> Transition lenses are gaudy, but transition <em>frames</em>? I sort of went and slapped those onto everything...</li>
+							</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel myPanel">
+				<div class="heading">
+					<div class="row">
+						<a data-toggle="collapse" data-parent="#accordion" href="#accordionThree">
+							<div class="col-xs-9">Blog Date right-aligned as originally planned. Check it out. Seriously, like, just look it it, it's right over there <span class="glyphicon glyphicon-arrow-right"></span></div>
+							<div class="col-xs-3 text-right">6/3/16 Notes</div>
+						</a>
+					</div>
+				</div>
+					
+					<div id="accordionThree" class="panel-collapse collapse">
+						<div class="body">
+								<p><em>Was showing my buddy how progress was coming along and he showed me how to right-align real easy-like. Hopefully it works with a super long title and everything? Notes re-formatting = addressed.</em></p>
+							<h3>Global</h3>
+								<ul>
+									<li><strong>New Fonts:</strong> Imported Open Sans (global) and Montserrat (jumbotron header) fonts. Open sans may actually be too "airy" against the white background, idk</li>
+								</ul>
+							<h3>Home</h3>
+								<ul>
+									<li>Jumbotron header color: black -> blue</li>
+									<li>Struggling to implement a "footer" in the style of a banner across the bottom of the jumbotron, may have to make something custom</li>
+								</ul>
+							<h3>Blog</h3>
+								<ul>
+									<li>Blog date is now right-aligned in the panel header using text-right class</li>
+									<li>Split between title and date will now be 9 and 3 instead of 6 and 6. Improves spacing for cases of longer titles and less wide windows</li>
+								</ul>
+						</div>
+					</div>
+			</div>
+
+			<div class="panel myPanel">
+					<div class="heading">
+						<div class="row">
+							<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwo">
+								<div class="col-xs-6">Functional Blog Concept = <span class="glyphicon glyphicon-ok"></span></div>
+								<div class="col-xs-6">6/2/16 Notes</div>
+							</a>
+						</div>
+					</div>
+
+					<div id="accordionTwo" class="panel-collapse collapse">
+						<div class="body">
+							<p><em>Today's notes are pretty stream of consciousness-esque, might re-format later...</em></p>
+							<ul>
+								<li>Moved "Notes 6/1/16" panel from main page to "Test Page"</li>
+								<li>Added today's notes to Test Page</li>
+								<li>Added copyright footer, separated from rest of content by horizontal rule</li>
+								<li>Test Page web title changed from "Learning CSS" to "Blog". Can't remember, is it more standard to have uniform web title across domain? Maybe including original brand on every page?</li>
+								<li> ^ Decided to change web title to "Blog &middot Learning CSS". Changed web title on index.html to "Home &middot Learning CSS". This is probably a good way of doing it for now. (moving forward, index.html will be referred to as "Home" and page2.html/"Test Page" will be referred to as "Blog" until further notice)</li>
+								<li> ^ Shout outs to Google for understanding that a "middle floating period" is in fact an <strong>&middot Interpunct</strong></li>
+								<li>Reminder to self not to paste special characters into HTML, code for interpunct is <code>&/middot</code> (get rid of "/")</li>
+								<li>Copied navbar from Home, added to Blog</li>
+								<li>Updates to navbar:</li>
+									<ul>
+										<li>(Hmm, is it possible to nest uls like this?)</li>
+											<ul><li>update: yes</li></ul>
+										<li>"Link" is now "Main", "Test Page" is now "Blog"</li>
+										<li>On Main page navbar, "Main" remains set to active class, and is unclickable. Blog page has "Blog" set to active. TODO: Once I start learning how to script, find out how to detect current page and adjust visuals automatically (I'm sure it's "smarter" coding but is this solution <em>actually</em> more economic? seems running a script would hit load time more than having something like that set manually) unsure about the subject but still want to learn this</li>
+										</ul>
+								<li>Copied footer from Home, added to Blog</li>
+								<li>Updated blog header concept: Title and Date. Used bootstrap's row/col to left and right align them on the same line. Not a perfect job, looks like I could use floats to align them the way I was going for, but it doesn't look bad enough to leap into it immediately. Gets the job done</li>
+								<li>Added spicy meme to Home page. Sorry</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			<div class="panel myPanel">
+					<div class="heading">
+						<div class="row">
+							<a data-toggle="collapse" data-parent="#accordion" href="#accordionOne">
+								<div class="col-xs-12">Notes 6/1/16</div>
+							</a>
+						</div>
+					</div>
+					<div id="accordionOne" class="panel-collapse collapse">
+						<div class="body">
+							<ul>
+								<li>Started web project, created index.html, main.css, and page2.html</li>
+								<li>Added navbar, trimmed redundant features, incorporated custom values to personalize both color and visual fx for different states (active, open / hover, focus)</li>
+								<li>Created custom panels (widgets) inspired by Bootstrap's premade panels</li>
+								<li>Aligned panels using grid classes, alignment will change based on screen width. Added hover functionality to panels, a shadow will highlight position of mouse</li>
+								<li>Added jumbotron. "Check Out The Reviews!", title salvaged from lowest cleverness-threshold sector of brain, decided to use this theme as a template of sorts for future features, such as...</li>
+								<li>Moving widgets into jumbotron, used, uh, "review" lingo as filler text. In future this concept could translate to preview slides of a marquee, or interactive "highlights" of an otherwise static cover screen. Not too shabby... TODO: Push this further</li>
+								<li>Incorporating stock images to experiment with media-text coupling. Possible implementations could include message forum avatars, blog post previews, "about the author". Useful to know</li>
+								<li> Used img-circle class to make images circles. Drew borders around images. Looks neat, border isn't seamless, weird pixel fraying around inner side of border. Possibly layering issue, keep eye out for solutions</li>
+								<li>Added opacity feature to images. Images at 80% opacity by default, hovering over the image will up opacity to 100% all fluid-like. Documenting potentially unhealthy infatuation with this functionality as early as possible, just in case</li>
+								<li>Deleted useless panel at bottom of page, un-deleted useless panel at bottom of page, repurposed as Patch Notes section. Plan to document learning process, this panel is prototype for blog. TODO: move patch notes to test page</li>
+							</ul>
+							</div>
+						</div>
+				</div>
+			</div>
+
+		<footer>
+			<hr>
+			<div class="container">
+				<div class="footer">
+				<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>  2016 pls no stealing my imaginary website
+			</div>
+		</footer>
+
+			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	</body>
+</html>
