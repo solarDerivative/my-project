@@ -31,18 +31,6 @@
 					        <li><a href="index.html">Home</a></li>
 					        <li><a href="page2.html">Blog</a></li>
 					        <li class="active"><a href="page3.html">Sandbox<span class="sr-only">(current)</span></a></li>
-					        <li class="dropdown">
-					        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-					        	<ul class="dropdown-menu">
-						            <li><a href="#">Action</a></li>
-						            <li><a href="#">Another action</a></li>
-						            <li><a href="#">Something else here</a></li>
-						            <li role="separator" class="divider"></li>
-						            <li><a href="#">Separated link</a></li>
-						            <li role="separator" class="divider"></li>
-						            <li><a href="#">One more separated link</a></li>
-					        	</ul>
-					    	</li>
 				    	</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
@@ -58,18 +46,40 @@
 			</div>
 		</div>
 
-		<main>
-			<p>Paragraph</p>
-			<p class ="second">Paragraph .second</p>
-			<h4>Lists</h4>
-			<ul id="checklist">
-				<li>Apples</li>
-				<li class="done">Oranges</li>
-				<li>Bananas</li>
-				<li>Watermelon</li>
-			</ul>
+		<main><div class="container">
+			<div class="myBanner" style=" background-image: url(https://s-media-cache-ak0.pinimg.com/736x/2a/ce/06/2ace06c2b58f3b818954c2514462d5d7.jpg); background-size:cover; border-radius:5px; text-shadow:0px 0px 8px #ddd;">
+				<div class="container content" style="padding-right:60px">
+					<h1>Events</h1>
+				</div>
+			</div>
+			<p>
+			<h4>Add Numbers:</h4>
+			<div class="row">
+				<div class="col-sm-6">
+					<input id="num-one"> + <input id="num-two">
+				</div>
+				<div class="col-sm-6"><p id="add-sum"></p></div>
+			</div>
+			
+
+			<hr>
+
+			<h4>Pictures</h4>
+			<div class="row">
+				<div class="col-sm-5">
+					<ul>
+						<li><a data-img="simon-pic" id="simon" href="#/">Simon Cowell</a></li>
+						<li><a data-img="bruce-pic" id="bruce" href="#/">Bruce Willis</a></li>
+						<li><a data-img="ben-pic" id="ben" href="#/">Ben Carson</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-7">
+					<img class="hide" id="simon-pic" src="http://i.imgur.com/jAVX5g9.jpg">
+					<img class="hide" id="bruce-pic" src="http://images.mentalfloss.com/sites/default/files/styles/article_640x430/public/rickrollheader.png">
+					<img class="hide" id="ben-pic" src="http://lh5.googleusercontent.com/8NHAEEFut-isfzjSDIe0sOgsk3OsECC5PsWeB1i2ZffOoBVA0szXdNi_dHmxak61iWI9Q_Ha1oCI78rxs_RUKIs_HWixiJmLUXsZLE2lJGmWs8i1CYcJ9rPF">
+				</div>
+			</div>
 		</main>
-		<form id="gclp-frame-form" target="gclp-frame" method="post" style="display:none;"></form>
 
 		<footer>
 			<hr>
@@ -84,6 +94,6 @@
     <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-	<script src="main.js"></script>
+	<script src="events.js"></script>
 	</body>
 </html>

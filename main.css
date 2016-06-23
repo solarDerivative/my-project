@@ -8,6 +8,10 @@ h1{
 	font-family: 'Montserrat', sans-serif;
 }
 
+img{
+	height: 200px;
+}
+
 /*custom navbar test*/
 .navbar-custom{
 	background-color:#223355;
@@ -182,4 +186,8 @@ h1{
 .done{
 	color:#ccc;
 	text-decoration: line-through;
+}
+
+.hide{
+	display: none;
 }
