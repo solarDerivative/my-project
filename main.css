@@ -191,3 +191,16 @@ img{
 .hide{
 	display: none;
 }
+
+
+li input{
+	display: none;
+}
+
+li.edit span{
+	display: none;
+}
+
+li.edit input{
+	display: initial;
+}
