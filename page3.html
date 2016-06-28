@@ -31,6 +31,7 @@
 					        <li><a href="index.html">Home</a></li>
 					        <li><a href="page2.html">Blog</a></li>
 					        <li class="active"><a href="page3.html">Sandbox<span class="sr-only">(current)</span></a></li>
+					        <li><a href="https://github.com/solarDerivative/my-project">Github</a></li>
 				    	</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
@@ -53,12 +54,18 @@
 				</div>
 			</div>
 			<br>
-			<h4>Add Numbers:</h4>
+			<h4>Basic Calculator</h4>
+			<select id="operation" onchange="OnSelectedIndexChange()">
+				<option value="add">Add</option>
+				<option value="subtract">Subtract</option>
+				<option value="multiply">Multiply</option>
+				<option value="divide">Divide</option>
+			</select>
 			<div class="row">
 				<div class="col-sm-6">
-					<input id="num-one"> + <input id="num-two">
+					<input id="num-one"> <span id="sign"> + </span> <input id="num-two">
 				</div>
-				<div class="col-sm-6"><p id="add-sum"></p></div>
+				<div class="col-sm-6"><p id="solution"></p></div>
 			</div>
 			
 

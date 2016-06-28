@@ -14,17 +14,55 @@ DRY: Don't Repeat Yourself*/
 
 var numOne = document.getElementById("num-one");
 var numTwo = document.getElementById("num-two");
-var addSum = document.getElementById("add-sum")
+var solution = document.getElementById("solution");
+var sign = document.getElementById("sign");
+var ops = document.getElementById("operation");
+
+numOne.addEventListener("input", calculate);
+numTwo.addEventListener("input", calculate);
 
 
-numOne.addEventListener("input", add);
-numTwo.addEventListener("input", add);
-
-function add(){
+function calculate(){
 	var one = parseFloat(numOne.value) || 0;
 	var two = parseFloat(numTwo.value) || 0;
-	addSum.innerHTML = "The sum is: " + (one + two);
+
+	if(document.getElementById("operation").value == "add"){
+		solution.innerHTML = "The sum is: " + (one + two);
+	} else if(document.getElementById("operation").value == "subtract"){
+		solution.innerHTML = "The difference is: " + (one - two);	
+	} else if(document.getElementById("operation").value == "multiply"){
+		solution.innerHTML = "The product is: " + (one * two);
+	} else {
+		solution.innerHTML = "The quotient is: " + (one / two);
+	}
+
 }
+
+function clearField(){
+	numOne.value = "";
+	numTwo.value = "";
+	solution.innerHTML = "";
+}
+
+function OnSelectedIndexChange(){
+	clearField();
+
+	if(document.getElementById("operation").value == "subtract"){
+		sign.innerHTML = " - ";
+	} else if(document.getElementById("operation").value == "multiply"){
+		sign.innerHTML = " * ";
+	} else if(document.getElementById("operation").value == "divide"){
+		sign.innerHTML = " / ";
+	} else {
+		sign.innerHTML = " + ";
+	}
+	
+	console.log(document.getElementById("operation").value + " is now the active operation.");
+}
+
+
+
+//////////////////////////////////////
 
 
 var simon = document.getElementById("simon");
