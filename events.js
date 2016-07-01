@@ -93,19 +93,24 @@ var slideIndex = 1;
 showDivs(slideIndex);
 
 function plusDivs(n){
+	console.log(n + ": formal parameter of plusDivs before showDivs is run");
+	console.log(slideIndex + ": slideIndex before showDivs is run");
 	showDivs(slideIndex += n);
+	console.log(n + ": formal parameter of plusDivs after showDivs is run");
+	console.log(slideIndex + ": slideIndex after showDivs is run");
 	
 }
 	
-function showDivs(n){
+function showDivs(k){
 	var i;
 	var x = document.getElementsByClassName("mySlides");
-	console.log(n);
-	/*if (n > x.length){
+	console.log(k + ": formal parameter of showDivs when showDivs starts");
+	console.log(slideIndex + ": slideIndex when showDivs starts");
+	if (k > x.length){
 		slideIndex = 1;
-	}*/
-	if (n < 1) {
-		console.log(n + (" (n) is less than 1"));
+	}
+	if (k < 1) {
+		console.log(k + (" (k) is less than 1"));
 		slideIndex = x.length;
 	}
 	for(i = 0; i < x.length; i++){
