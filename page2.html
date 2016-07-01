@@ -43,13 +43,91 @@
 		<div class="panel myPanel">
 			<div class="heading">
 				<div class="row">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwelve">
+						<div class="col-xs-9">One Month In</div>
+						<div class="col-xs-3 text-right">6/30/16 Notes</div>
+					</a>
+				</div>
+			</div>
+			<div id="accordionTwelve" class="panel-collapse collapse in">
+				<div class="body">
+						<p><em>&emsp;So... I am very confused. I just got done writing yesterday's blog, today, because I didn't have time yesterday. And now the console is not producing the same results as yesterday. I will have to re-acquaint myself with... whatever is happening right now...?<p>
+						&emsp;Right. Anyway! The first post was made June 1st. Today is June 30th. I've been at it for a full month! So, to recap... well, I have gone from 0, literally nothing, to:</em></p>
+					<h3>Home</h3>
+						<ul>
+							<li>A Home page where I refreshed myself on the fundamentals of HTML and CSS</li>
+							<li>A Home page that I made with a freshly-downloaded Sublime Text Editor</li>
+							<li>A Home page that I used to learn about Bootstrap, which made for a very stress-free introduction to self-taught web development</li>
+						</ul>
+					<h3>Blog</h3>
+						<ul>
+							<li>A personal record of everything I've learned, maintained and updated every day that I've worked on this project</li>
+							<li>A way of organizing every post so as to not have a colossal wall of text for a page</li>
+						</ul>
+					<h3>Sandbox</h3>
+						<ul>
+							<li>A page dedicated to experimentation and learning, at first created to try and create the Blog's "accordion" functionality without the risk of messing with the page's content</li>
+							<li>Then used as an empty slate to write on as I followed Javascript tutorials</li>
+							<li>And now the results of those simple tutorials are starting points to learn how to code things more complicated on my own</li>
+						</ul>
+					<h3>Github</h3>
+						<ul>
+							<li>And finally, a <a href="https://github.com/solarDerivative/my-project">repository</a> for all of my things!</li>
+						</ul>
+					<p><em>&emsp;I plan to keep going. My hope is that, in the near future, I am competent enough to make this a career path for myself. I'd like to look back on this post next June and be happy that I made this opportunity for myself. So, in the interest of being able to do that, back to work!</em>
+
+					<h3><font color="#C3A771"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span></font> EDIT: Sandbox</h3>
+						<ul>
+							<li><strong>YES! I FIGURED IT OUT:</strong> I was looking over my two functions, <code>plusDivs(n)</code> and <code>showDivs(n)</code>, wondering why "n" was behaving the way it was. And then it occurred to me that I don't ever "declare" <code>n</code> as a variable, or at least not in the "traditional" sense (right? excuse my misunderstanding of terminology, I'm still getting there). So then, <code>n</code> might not be static - not even referring to the same thing - across these two functions.</li>
+							<li><strong>Parameters:</strong> (<em>I promise I knew and understood these terms back when I learned them in high school...</em>) Anyway, once that thought occurred to me, I wanted to find out more about the properties of whatever it is you're putting in those function's parentheses. Found <a href="https://chortle.ccsu.edu/java5/Notes/chap34A/ch34A_3.html">here</a>:</li>
+								<ul><li><strong>formal parameter:</strong> the identifier used in a method to stand for the value that is passed into the method by a caller</li>
+								<li><strong>actual parameter:</strong> the actual value that is passed into the method by a caller</li></ul>
+							<li><code>(n)</code><strong>'s All the Way Down (alt. A Tale of Two</strong> <code>(n)</code><strong>'s:</strong>  Identifier used IN a method to stand for the value THAT IS PASSED INTO the method. I had been treating the <code>n</code> of <code>plusDivs(n)</code> and the <code>n</code> of <code>showDivs(n)</code> as the same thing. By changing <code>showDivs(n)</code> to <code>showDivs(k)</code> and all instances of <code>n</code> inside that method to <code>k</code>, I was able to find out for sure that they were completely different things. Mystery solved!</li>
+						</ul>
+					<hr>
+					<center><img style="width:80%" src="http://i.imgur.com/5AFwKDV.png"><p>
+						<em><strong>PS:</strong> Console is the best.</em></center>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel myPanel">
+			<div class="heading">
+				<div class="row">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionEleven">
+						<div class="col-xs-9">First Speedbump</div>
+						<div class="col-xs-3 text-right">6/29/16 Notes</div>
+					</a>
+				</div>
+			</div>
+			<div id="accordionEleven" class="panel-collapse collapse">
+				<div class="body">
+						<p><em>&emsp;So my next "tutorial-less upgrade project" was to change the "Pictures" widget on the Sandbox to where, instead of clicking text to show an image, it would be one of those shideshows where you can click to show the next or previous image. My process was to <strong>1)</strong> research the basic functioning Javascript to make it work, <strong>2)</strong> edit the HTML and CSS so I liked the soon-to-be end product, then <strong>3)</strong> delete the Javascript then re-write it in a way that makes sense to me.<p>
+						&emsp;I got it mostly done, but needed to cheat for some of the details. I added the details, and the slideshow worked just fine. But looking back over the code as a whole, I didn't fully understand what was happening on every single line. I commented-out some bits and pieces so that I could see exactly how each function and loop was working at any given time. And that was good.<p>
+						<center><p><img src="http://i.imgur.com/Nyxvxgv.png"></p>
+						<img src="http://i.imgur.com/FPMpwdl.png"><p></center>
+						&emsp;Now, I've hit a point where I have no idea what is going on. The way the code is commented out, on the slideshow (comprised of 3 images) you can click the <strong>Next</strong> button as many times as you want, and after the 3rd/last image in the array nothing will appear, and <code>n += 1</code> each time, so <code>n</code> can go as high as you want. On the flip side, when you click the <strong>Previous</strong> button, it will cycle through the images without returning nothing (intended behavior), and will -1 each time, but when it <strong>should</strong> hit -3, it resets to 0 instead. (0, -1, -2, 0, -1, -2, 0, etc)<p>
+						&emsp;The way I've described it, it seems to make sense: <strong>Previous</strong> cycles through the array correctly, so <code>n</code> gets reset when you go from the (<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><u>1</u> 2 3) first position to the (1 2 <u>3</u><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>) last position of the array. <strong>Next</strong> does NOT cycle through the array correctly, it will stop showing images after you (1 2 3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>) move past the last image.<p>
+						&emsp;What I'm not getting is, why is it <code>n</code> that's being reset like this? As far as I can tell from my code, <code>n -= 1</code> when <strong>Previous</strong> is clicked and <code>n += 1</code> whenever <strong>Next</strong> is clicked. There's nothing in my code that I can see trying to change or set the value of <code>n</code> outside of its (+= 1 / -= 1) behavior. I have variable <code>slideIndex</code> that is supposed to be the variable that is acted upon and reset whenever the user cycles through the array (or so I thought).<p>
+						&emsp;This one will take some figuring out! I am not moving on until this code makes absolute sense to me.</em></p>
+					<h3>Sandbox</h3>
+						<ul>
+							<li><strong>UNDER CONSTRUCTION: </strong> "Picture" tool in process of being upgraded to a slideshow. Intended functionality on hold until I can fully understand the Javascript behind it.</li>
+						</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel myPanel">
+			<div class="heading">
+				<div class="row">
 					<a data-toggle="collapse" data-parent="#accordion" href="#accordionTen">
 						<div class="col-xs-9">First Tutorial-less Javascript Project Done!!</div>
 						<div class="col-xs-3 text-right">6/28/16 Notes</div>
 					</a>
 				</div>
 			</div>
-			<div id="accordionTen" class="panel-collapse collapse in">
+			<div id="accordionTen" class="panel-collapse collapse">
 				<div class="body">
 						<p><em>&emsp;Wow. Woooow. It feels so nice to finally have it finished and have it working the way I wanted. And this project was only a couple hours.</em></p>
 					<h3>Sandbox</h3>

@@ -65,7 +65,7 @@ function OnSelectedIndexChange(){
 //////////////////////////////////////
 
 
-var simon = document.getElementById("simon");
+/*var simon = document.getElementById("simon");
 var bruce = document.getElementById("bruce");
 var ben = document.getElementById("ben");
 
@@ -87,6 +87,37 @@ function picLink() {
 		pic.className = "hide";
 	}
 
+}*/
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n){
+	console.log(n + ": formal parameter of plusDivs before showDivs is run");
+	console.log(slideIndex + ": slideIndex before showDivs is run");
+	showDivs(slideIndex += n);
+	console.log(n + ": formal parameter of plusDivs after showDivs is run");
+	console.log(slideIndex + ": slideIndex after showDivs is run");
+	
+}
+	
+function showDivs(k){
+	var i;
+	var x = document.getElementsByClassName("mySlides");
+	console.log(k + ": formal parameter of showDivs when showDivs starts");
+	console.log(slideIndex + ": slideIndex when showDivs starts");
+	if (k > x.length){
+		slideIndex = 1;
+	}
+	if (k < 1) {
+		console.log(k + (" (k) is less than 1"));
+		slideIndex = x.length;
+	}
+	for(i = 0; i < x.length; i++){
+		x[i].style.display = "none";
+	}
+
+	x[slideIndex-1].style.display = "block";
 }
 
 //////////////////////////////////////////

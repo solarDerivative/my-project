@@ -8,9 +8,9 @@ h1{
 	font-family: 'Montserrat', sans-serif;
 }
 
-img{
+/*img{
 	height: 200px;
-}
+}*/
 
 /*custom navbar test*/
 .navbar-custom{
@@ -203,4 +203,47 @@ li.edit span{
 
 li.edit input{
 	display: initial;
+}
+
+/* ******************** */
+
+.mySlideshow{
+	position:relative;
+}
+
+.mySlides{
+	margin:auto;
+	height:40%;
+	width:80%;
+}
+
+.mySlideshow .prev{
+	opacity:0.2;
+	background-color:#223355;
+	border-radius:80px;
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	padding:15px 20px;
+	font-size:2em;
+	color:#eceff1;
+}
+
+.mySlideshow .next{
+	opacity:0.2;
+	background-color:#223355;
+	border-radius:80px;
+	cursor:pointer;
+	position:absolute;
+	right:0;
+	top: 50%;
+	padding:15px 20px;
+	font-size:2em;
+	color:#eceff1;
+}
+
+.mySlideshow .prev:hover, .next:hover{
+	opacity:1;
+	transition-duration: 0.3s;
 }
