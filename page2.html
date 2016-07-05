@@ -11,7 +11,6 @@
 	</head>
 	<body>
 		<header class="navbar-custom" role="banner">
-			<div class="container">
 				<nav role="navigation">
 				    <!-- Brand and toggle get grouped for better mobile display -->
 				    <div class="navbar-header">
@@ -28,17 +27,61 @@
 				    <!-- Collect the nav links, forms, and other content for toggling -->
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				    	<ul class="nav navbar-nav">
+				    		<li><div class="vertical-line"></li>
 					        <li><a href="index.html">Home</a></li>
 					        <li class="active"><a href="page2.html">Blog<span class="sr-only">(current)</span></a></li>
 					        <li><a href="page3.html">Sandbox</a></li>
 					        <li><a href="https://github.com/solarDerivative/my-project">Github</a></li>
 				    	</ul>
+				    	<ul class="nav navbar-nav navbar-right">
+				    		<li><div class="vertical-line"></li>
+							<li><a href="#">Welcome back, <span class="result"></span></a></li>
+						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
-			</div>
 		</header>
 
 		<div class="panel-group" id="accordion">
+
+		<div class="panel myPanel">
+			<div class="heading">
+				<div class="row">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionThirteen">
+						<div class="col-xs-9">Sandbox LEVEL UP!</div>
+						<div class="col-xs-3 text-right">7/5/16 Notes</div>
+					</a>
+				</div>
+			</div>
+			<div id="accordionThirteen" class="panel-collapse collapse in">
+				<div class="body">
+					<p><em>&emsp;How to upgrade the Edit Table? I don't have a solid idea yet, but I'm thinking of taking user input and setting it as a global variable... we'll see what happens.</p>
+					<p>&emsp;Note to self: Now that I'm a month in, I've got to stop taking week-long breaks. There is too much to learn!
+					<p>&emsp;EDIT: 7 hours later: Done! It feels so great to write a for loop, not because you've Googled hints, but because you UNDERSTAND that using a for loop would help you accomplish whatever behavior you're aiming for. I'm really excited about the script I managed to make work - I didn't think it was going to end up being so easy for me to figure out without having to start learning an outside library.</em>
+					<hr>
+					<p><em>Changes made in AM</em></p>
+					<h3>Global</h3>
+						<ul>
+							<li>Navbar content no longer in container class, spans entire screen width</li>
+							<li>Made border using CSS to separate "My Project" from menu elements</li>
+						</ul>
+					<br>
+					<em>Changes made in PM</em>
+					<h3>Sandbox</h3>
+						<ul>
+							<li><strong>HELLOOOOOO USER:</strong> Edit Table <strong>UPGRADED</strong>! Now there is an empty prompt where you may enter a username. The username is locally stored and will show up in the header across the entire site. So exciting! Unfortunately I'm not 100% on the properties of localStorage. I will have to figure that one out</li>
+						</ul>
+					<h3>Global</h3>
+						<ul>
+							<li><strong>^ :</strong> "Welcome back, (username(in caps!))" added to right side of navbar</li>
+							<li>Border added next to it as well</li>
+						</ul>
+					<p><em>&emsp;To-Do list from here is pretty big, left some loose ends in setting up this script. I found that Bootstrap really got in my way when trying to get the Username part into the navbar, so I'd like to scrap the current navbar and make a new one from scratch.</p>
+					<p>&emsp;Seeing the username prompt and the slideshow next to each other on the Sandbox gives me some ideas... like making it so that a user can set a "profile picture" using the picture slideshow. With a name and a photo, they could then "write a review" and be featured just like the "reviews" on the home page. Yeah?? I think accomplishing that (if able) will be my "Final Project" for Javascript, proof to myself that I'm ready to move on.</p>
+					<p>Until next time!</p>
+
+				</div>
+			</div>
+		</div>
 
 		<div class="panel myPanel">
 			<div class="heading">
@@ -49,7 +92,7 @@
 					</a>
 				</div>
 			</div>
-			<div id="accordionTwelve" class="panel-collapse collapse in">
+			<div id="accordionTwelve" class="panel-collapse collapse">
 				<div class="body">
 						<p><em>&emsp;So... I am very confused. I just got done writing yesterday's blog, today, because I didn't have time yesterday. And now the console is not producing the same results as yesterday. I will have to re-acquaint myself with... whatever is happening right now...?<p>
 						&emsp;Right. Anyway! The first post was made June 1st. Today is June 30th. I've been at it for a full month! So, to recap... well, I have gone from 0, literally nothing, to:</em></p>
@@ -397,5 +440,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<script src="username.js"></script>
 	</body>
 </html>

@@ -8,14 +8,31 @@ h1{
 	font-family: 'Montserrat', sans-serif;
 }
 
-/*img{
-	height: 200px;
-}*/
 
+
+.vertical-line{
+	background-color: #114;
+	box-shadow:0px 0px 4px #115;
+	display:inline-block;
+	float:left;
+	height: 30px;
+	margin-top:10px;
+	width:2px;
+}
 /*custom navbar test*/
 .navbar-custom{
 	background-color:#223355;
 	border-color:#132342;
+	width: 100%;
+}
+
+.navbar-nav > .navbar-right > a{
+	text-align: right;
+	}
+
+.navbar-nav .result{
+	font-size: 0.9em;
+	text-transform: uppercase;
 }
 
 .navbar-custom .navbar-brand{
@@ -23,6 +40,7 @@ h1{
 	transition-duration:0.25s;
 
 }
+
 .navbar-custom .navbar-brand:hover, .navbar-custom .navbar-brand:focus{
 	color: #a9a9ef;
 }
@@ -52,6 +70,8 @@ h1{
 .navbar-custom .navbar-nav > .open > a, .navbar-custom .navbar-nav > .open > a:hover, .navbar-custom .navbar-nav > .open > a:focus{
 	background-color:#132342;
 	color:#d7dcf6;
+}
+
 }
 /*any of these actually being used? unsure*/
 .navbar-custom .navbar-toggle{

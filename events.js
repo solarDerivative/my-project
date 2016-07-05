@@ -122,7 +122,7 @@ function showDivs(k){
 
 //////////////////////////////////////////
 
-var checklist = document.getElementById("checklist");
+/*var checklist = document.getElementById("checklist");
 
 var items = checklist.querySelectorAll("li");
 var inputs = checklist.querySelectorAll("input");
@@ -149,4 +149,4 @@ function itemKeypress(event) {
 	if (event.which === 13) {
 		updateItem.call(this);
 	}
-}
+}*/
