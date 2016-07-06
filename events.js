@@ -11,41 +11,50 @@
 - focus (focus on area, clicked into area for example)
 full list of events: https://developer.mozilla.org/en-US/docs/Web/Events 
 DRY: Don't Repeat Yourself*/
-
 var numOne = document.getElementById("num-one");
 var numTwo = document.getElementById("num-two");
 var solution = document.getElementById("solution");
 var sign = document.getElementById("sign");
-var ops = document.getElementById("operation");
+var op = document.getElementById("operation");
+var temp1;
+var temp2;
 
 numOne.addEventListener("input", calculate);
 numTwo.addEventListener("input", calculate);
+numOne.addEventListener("click", clearOrHighlight);
+numTwo.addEventListener("click", clearOrHighlight);
 
 
 function calculate(){
-	var one = parseFloat(numOne.value) || 0;
-	var two = parseFloat(numTwo.value) || 0;
+	var one = parseFloat(numOne.value || 0);
+	var two = parseFloat(numTwo.value || 0);
 
-	if(document.getElementById("operation").value == "add"){
+	if(op.value == "add"){
 		solution.innerHTML = "The sum is: " + (one + two);
-	} else if(document.getElementById("operation").value == "subtract"){
+	} else if(op.value == "subtract"){
 		solution.innerHTML = "The difference is: " + (one - two);	
-	} else if(document.getElementById("operation").value == "multiply"){
+	} else if(op.value == "multiply"){
 		solution.innerHTML = "The product is: " + (one * two);
-	} else {
+	} else if(op.value == "divide"){
 		solution.innerHTML = "The quotient is: " + (one / two);
+	} else if(op.value == "divide" && two == 0){
+		solution.innerHTML = "Please don't do that.";
 	}
-
 }
 
-function clearField(){
-	numOne.value = "";
-	numTwo.value = "";
+function zeroField(){
+	numOne.value = 0;
+	numTwo.value = 0;
 	solution.innerHTML = "";
 }
 
+function clearOrHighlight(){
+	this.setSelectionRange(0, this.value.length);
+}
+
+
 function OnSelectedIndexChange(){
-	clearField();
+	zeroField();
 
 	if(document.getElementById("operation").value == "subtract"){
 		sign.innerHTML = " - ";
@@ -93,19 +102,19 @@ var slideIndex = 1;
 showDivs(slideIndex);
 
 function plusDivs(n){
-	console.log(n + ": formal parameter of plusDivs before showDivs is run");
-	console.log(slideIndex + ": slideIndex before showDivs is run");
+	/*console.log(n + ": formal parameter of plusDivs before showDivs is run");
+	console.log(slideIndex + ": slideIndex before showDivs is run");*/
 	showDivs(slideIndex += n);
-	console.log(n + ": formal parameter of plusDivs after showDivs is run");
-	console.log(slideIndex + ": slideIndex after showDivs is run");
+	/*console.log(n + ": formal parameter of plusDivs after showDivs is run");
+	console.log(slideIndex + ": slideIndex after showDivs is run");*/
 	
 }
 	
 function showDivs(k){
 	var i;
 	var x = document.getElementsByClassName("mySlides");
-	console.log(k + ": formal parameter of showDivs when showDivs starts");
-	console.log(slideIndex + ": slideIndex when showDivs starts");
+	/*console.log(k + ": formal parameter of showDivs when showDivs starts");
+	console.log(slideIndex + ": slideIndex when showDivs starts");*/
 	if (k > x.length){
 		slideIndex = 1;
 	}
@@ -150,3 +159,12 @@ function itemKeypress(event) {
 		updateItem.call(this);
 	}
 }*/
+
+var cb = document.getElementById("clearButton");
+cb.addEventListener("click", clearLocal);
+
+function clearLocal(){
+	localStorage.clear();
+	alert('localStorage cleared!');
+	location.reload();
+}

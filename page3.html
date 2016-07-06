@@ -32,11 +32,10 @@
 						    <li><a href="page2.html">Blog</a></li>
 						    <li class="active"><a href="page3.html">Sandbox<span class="sr-only">(current)</span></a></li>
 							<li><a href="https://github.com/solarDerivative/my-project">Github</a></li>
-					       	<li><a href="#"></a></li>
 					    </ul>
 					    <ul class="nav navbar-nav navbar-right">
 					    	<li><div class="vertical-line"></li>
-							<li><a href="#">Welcome back, <span class="result"></span></a></li>
+							<li><a><span id="welcome"></span> <span class="result"></span></a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
@@ -67,11 +66,10 @@
 			</select>
 			<div class="row">
 				<div class="col-sm-6">
-					<input id="num-one"> <span id="sign"> + </span> <input id="num-two">
+					<input id="num-one" value="0"> <span id="sign"> + </span> <input id="num-two" value="0">
 				</div>
 				<div class="col-sm-6"><p id="solution"></p></div>
 			</div>
-			
 
 			<hr>
 
@@ -109,6 +107,8 @@
 				<input type="submit" onclick="getUsername();" />
 			</form>
 			Current Username: <div class="result"></div>
+			<br>
+			<input id="clearButton" type="button" value="Wipe Local Storage" />
 			<!-- <div id="checklist">
 				<ul>
 					<li>
@@ -129,7 +129,7 @@
 			<hr>
 			<div class="container">
 				<div class="footer">
-				<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>  2016 pls no stealing my imaginary website
+				<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>  2016 pls no stealing my imaginary website <br> Best viewed/Most likely to function in the latest version of Google Chrome or Mozilla Firefox
 			</div>
 		</footer>
 
@@ -138,7 +138,8 @@
     <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-	<script src="events.js"></script>
 	<script src="username.js"></script>
+	<script src="events.js"></script>
+	
 	</body>
 </html>

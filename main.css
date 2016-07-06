@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@font-face{
+	font-family: Exodus-Sharpen;
+	src: url("Exodus-PersonalUse-Sharpen.otf") format("opentype")
+}
 
 body{
 	font-family: 'Open Sans', sans-serif;
@@ -13,11 +17,9 @@ h1{
 .vertical-line{
 	background-color: #114;
 	box-shadow:0px 0px 4px #115;
-	display:inline-block;
-	float:left;
 	height: 30px;
 	margin-top:10px;
-	width:2px;
+	width:1px;
 }
 /*custom navbar test*/
 .navbar-custom{
@@ -138,13 +140,19 @@ h1{
 	transition-duration:0.2s;
 }
 
-
 .myPanel{
 	background: rgba(255, 255, 255, .3);
 	border: 1px solid #14146c;
 	border-radius: 5px;
 	box-shadow:0px 0px 5px #666;
 	margin:3%;
+}
+
+.myPanel .month{
+	background:red;
+	margin:auto;
+	text-align:center;
+	width:200px;
 }
 
 .myPanel .heading{
@@ -164,6 +172,8 @@ h1{
 	box-shadow:0px 0px 7px #001;
 	transition-duration:0.4s;
 }
+
+
 
 
 

@@ -35,7 +35,7 @@
 				    	</ul>
 				    	<ul class="nav navbar-nav navbar-right">
 				    		<li><div class="vertical-line"></li>
-							<li><a href="#">Welcome back, <span class="result"></span></a></li>
+							<li><a><span id="welcome"></span> <span class="result"></span></a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
@@ -46,13 +46,83 @@
 		<div class="panel myPanel">
 			<div class="heading">
 				<div class="row">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionFourteen">
+						<div class="col-xs-9">Compatibility Issues and User Recognition</div>
+						<div class="col-xs-3 text-right">7/6/16 Notes</div>
+					</a>
+				</div>
+			</div>
+			<div id="accordionFourteen" class="panel-collapse collapse in">
+				<div class="body">
+					<p><em>&emsp;So it's come to my attention that most of the Javascript I've been using doesn't seem to work in Internet Explorer or Microsoft Edge (<s>as of writing, currently untested in Firefox</s> just checked, Firefox works fine). Not really sure what could be causing most the website to not work in IE. I probably won't be doing anything about it anytime soon without any leads.</p>
+					<p>&emsp;Got plenty of tidying up to do today. Then we'll see about that navbar.</p>
+					<p>&emsp;Check out this horizontal rule separating the exposition from the patch notes. It rules.</p>
+					<hr>
+					<p><u>8:30 AM</u></p></em>
+					<h3>Global</h3>
+						<ul>
+							<li>Added note about browser compatibility to footer</li>
+						</ul>
+					<h3>Blog</h3>
+						<ul>
+							<li>Fixed bug involving missing <code><"/em"></code> tag</li>
+						</ul>
+					<br>
+					<p><em><u>9:00 AM</u></em></p>
+					<h3>Sandbox</h3>
+						<ul>
+							<li><strong>Death and Rebirth:</strong> Added button for user to clear localStorage, which will erase username</li>
+							<ul><li>9:15 AM: Wait now it's not working. Dude</li>
+								<li>9:30 AM: <em>Fiiiixed</em></li></ul>
+							<li>Fixed bug in navbar involving extra empty <code><"a href="#""></code> tag</li>
+						</ul>
+					<br>
+					<p><em><u>10:15 AM</u></em></p>
+					<h3>Global</h3>
+						<ul>
+							<li><strong>Aloha:</strong> Some changes made to the welcome message to make it more versatile:</li>
+							<ul>
+								<li>Username script now checks to see if <code>userName</code> is <code>null</code> (hasn't been set by the user yet). If it is, it then gets set to "Guest"</li>
+								<li>"Welcome back, " removed from HTML and replaced with code that will set the message depending on if the user has been made a Guest or if they've already defined a username.</li>
+							</ul>
+						</ul>
+					<br>
+					<p><em><u>3:15 PM</u></em></p>
+					<h3>Sandbox</h3>
+						<ul>
+							<li><strong>Can you Make a Calculator Smarter?:</strong> Improvements made to Calculator code.
+								<ul><li>Input values are now set to 0 instead of "" by default</li>
+									<li>Input field logic simplified. Clicking inside an input field will no longer clear the field, and clicking outside an empty field will no longer attempt to fill the space with a 0. Instead, clicking now selects everything inside the field. You can still edit quickly, but between this change and the previous change there is more working with numbers (as a calculator should) instead of working with blank values</li>
+									<li>As suggested, a message will be displayed when the user attempts to divide by zero</li>
+									<li>Simplified code by creating variables for repeated instances of certain calls, i.e. <code>"var op = document.getElementById(example)"</code> so that instead of having 5 of <code>"document.getElementById(example).value"</code> we have 5 of <code>"op.value"</code></li>
+									<li>That's good coding, right? I think?</li>
+								</ul>
+							</li>
+						</ul>
+					<h3>Blog</h3>
+						<ul>
+							<li>Fixed bug involving missing <code><"/ul"></code> tag</li>
+						</ul>
+					<br>
+					<p><em><u>4:15 PM</u></em></p>
+					<h3>Blog</h3>
+						<ul>
+							<li>Trying to make a panel of a smaller size, but it isn't going too well so far</li>
+						</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel myPanel">
+			<div class="heading">
+				<div class="row">
 					<a data-toggle="collapse" data-parent="#accordion" href="#accordionThirteen">
 						<div class="col-xs-9">Sandbox LEVEL UP!</div>
 						<div class="col-xs-3 text-right">7/5/16 Notes</div>
 					</a>
 				</div>
 			</div>
-			<div id="accordionThirteen" class="panel-collapse collapse in">
+			<div id="accordionThirteen" class="panel-collapse collapse">
 				<div class="body">
 					<p><em>&emsp;How to upgrade the Edit Table? I don't have a solid idea yet, but I'm thinking of taking user input and setting it as a global variable... we'll see what happens.</p>
 					<p>&emsp;Note to self: Now that I'm a month in, I've got to stop taking week-long breaks. There is too much to learn!
@@ -77,9 +147,14 @@
 						</ul>
 					<p><em>&emsp;To-Do list from here is pretty big, left some loose ends in setting up this script. I found that Bootstrap really got in my way when trying to get the Username part into the navbar, so I'd like to scrap the current navbar and make a new one from scratch.</p>
 					<p>&emsp;Seeing the username prompt and the slideshow next to each other on the Sandbox gives me some ideas... like making it so that a user can set a "profile picture" using the picture slideshow. With a name and a photo, they could then "write a review" and be featured just like the "reviews" on the home page. Yeah?? I think accomplishing that (if able) will be my "Final Project" for Javascript, proof to myself that I'm ready to move on.</p>
-					<p>Until next time!</p>
-
+					Until next time!</em>
 				</div>
+			</div>
+		</div>
+
+		<div class="panel myPanel month">
+			<div class="month">
+				CSS DOESN'T MAKE SENSE......
 			</div>
 		</div>
 
@@ -432,7 +507,7 @@
 			<hr>
 			<div class="container">
 				<div class="footer">
-				<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>  2016 pls no stealing my imaginary website
+				<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>  2016 pls no stealing my imaginary website <br> Best viewed/Most likely to function in the latest version of Google Chrome or Mozilla Firefox
 			</div>
 		</footer>
 
