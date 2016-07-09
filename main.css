@@ -148,11 +148,8 @@ h1{
 	margin:3%;
 }
 
-.myPanel .month{
-	background:red;
-	margin:auto;
-	text-align:center;
-	width:200px;
+.myPanel.month{
+	background: red;
 }
 
 .myPanel .heading{
