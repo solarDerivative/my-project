@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Dosis:600);
 @font-face{
 	font-family: Exodus-Sharpen;
 	src: url("Exodus-PersonalUse-Sharpen.otf") format("opentype")
@@ -8,6 +9,11 @@
 body{
 	font-family: 'Open Sans', sans-serif;
 }
+
+.ARGH{
+	background-color:#000000;
+}
+
 h1{
 	font-family: 'Montserrat', sans-serif;
 }
@@ -39,6 +45,7 @@ h1{
 
 .navbar-custom .navbar-brand{
 	color:#eceff1;
+	font-family: 'Exodus-Sharpen';
 	transition-duration:0.25s;
 
 }
@@ -141,46 +148,73 @@ h1{
 }
 
 .myPanel{
-	background: rgba(255, 255, 255, .3);
-	border: 1px solid #14146c;
+	background: #000000;
+	border: 1px solid #2b2bff;
 	border-radius: 5px;
-	box-shadow:0px 0px 5px #666;
-	margin:3%;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top: 1%;
+	width:80%;
+	transition-duration:0.8s;
 }
 
-.myPanel.month{
-	background: red;
+.month{
+	background: #000000;
+	border: none;
+	box-shadow: inset 0px 0px 10px 20px #000;
+	font-family: Exodus-Sharpen;
+	font-size: 3.5em;
+	color: rgba(236, 239, 241, .6);
+	margin:auto;
+	padding-top:5px;
+	padding-bottom:5px;
+	text-align: center;
+	transition-duration:5s;
 }
 
 .myPanel .heading{
-	background:#a9a9ef;
+	background: rgba(162, 182, 195, .2);
 	border-radius: 5px 5px 0 0;
 	color:#14146c;
-	font-weight:700;
 	padding:10px 20px;
+	font-family: 'Dosis', sans-serif;
+	font-size:1.3em;
 }
+
+/*.headFont{
+	color:#14146c;
+}*/
 
 .myPanel .body{
+	background: rgba(255, 255, 255, .7);
 	padding: 10px 10px 5px 20px;
+	transition-duration:4s;
 }
 
-.myPanel:hover{
-	background: rgba(255, 255, 255, .7);
+.myPanel .body:hover{
+	background:rgba(255,255,255, .9);
+	transition-duration: 2s;
+}
+
+/*.myPanel:hover{
+	background: rgba(255, 255, 255, .9);
 	box-shadow:0px 0px 7px #001;
 	transition-duration:0.4s;
+}*/
+
+.month:hover{
+	background-color: #000000;
+	box-shadow:none;
+	color:#f7f8f9;
+	letter-spacing:5px;
+	transition-duration:2s;
 }
-
-
-
 
 
 .jumbotron .container .headingMain{
 	color:#14146c;
 	text-shadow: #333 1px 1px 5px;
 }
-
-
-
 
 .media .media-heading{
 	color:#14146c;
