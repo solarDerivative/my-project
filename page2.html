@@ -28,15 +28,17 @@
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				    	<ul class="nav navbar-nav">
 				    		<li><div class="vertical-line"></li>
-					        <li><a href="index.html">Home</a></li>
-					        <li class="active"><a href="page2.html">Blog<span class="sr-only">(current)</span></a></li>
-					        <li><a href="page3.html">Sandbox</a></li>
-					        <li><a href="https://github.com/solarDerivative/my-project">Github</a></li>
+					        <li><a href="index.html">HOME</a></li>
+					        <li class="active"><a href="page2.html">BLOG<span class="sr-only">(current)</span></a></li>
+					        <li><a href="page3.html">SANDBOX</a></li>
+					        <li><a href="https://github.com/solarDerivative/my-project">GITHUB</a></li>
 				    	</ul>
-				    	<ul class="nav navbar-nav navbar-right">
-				    		<li><div class="vertical-line"></li>
+				    	
+				    	<ul class="nav navbar-nav test">
+				    		<li><div class="vertical-line"></div></li>
 							<li><a><span id="welcome"></span> <span class="result"></span></a></li>
 						</ul>
+						</span>
 					</div><!-- /.navbar-collapse -->
 				</nav>
 		</header>
@@ -50,13 +52,69 @@
 		<div class="panel myPanel">
 			<div class="heading">
 				<div class="row">
-					<a data-toggle="collapse" data-parent="#accordion" href="#accordionFifteen">
-						<div class="col-xs-9 headFont">CSS Experimentation Day</div>
-						<div class="col-xs-3 text-right">7/11/16 Notes</div>
-					</a>
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionSixteen"><span class="headFont">
+						<div class="col-xs-9">DIMM<font color="red">*</font></div>
+						<div class="col-xs-3 text-right">7/12/16 Notes</div>
+					</span></a>
 				</div>
 			</div>
-			<div id="accordionFifteen" class="panel-collapse collapse in">
+			<div id="accordionSixteen" class="panel-collapse collapse in">
+				<div class="body">
+					<p>
+					<center><img src="http://i.imgur.com/j74ckXK.gif" height="200" width="200"><br><strong>[moon moon intensifies]</strong></center></p>
+					<p><em>&emsp;More CSS today. The Blog is the most, I think, functionally cohesive page, so I am using it to establish a solid style for the rest of the site.</em></p>
+					<hr>
+					<p><h4>11:30</h4></p>
+					<h3>Global</h3>
+						<ul>
+							<li><strong>Changes to Navbar:</strong> Updated Link color and font, meshes better with Brand font</li>
+						</ul>
+					<h3>Blog</h3>
+						<ul>
+							<li><strong><font color="red">*</font>Damn It, Moon Moon:</strong> Moon image I made from <a href="http://img.timeinc.net/time/2012/influentialplaces/themoon.jpg">this image</a> set as static background. Probably too bright, may need toning down</li>
+							<li>Miscellaneous edits to color values and other minor CSS attributes</li>
+						</ul>
+					<br>
+					<p><h4>15:30</h4></p>
+					<p><em>&emsp;Figured out a lot of small things I've been getting stuck on! May actually have gotten the navbar to where I want it, so I may not need to completely overhaul it. But I guess we'll see. Blog is looking really nice. Like, surprisingly really nice. Could be that there is too much empty space, but we'll figure that one out too. I realize having one page for an entire blog is pretty unconventional, and before long there will likely be too many posts to justify this format.</em></p>
+					<h3>Blog</h3>
+						<ul>
+							<li><strong>Moon Moon Nerfs:</strong> Moon brightness toned down</li>
+							<li><strong>Hopefully This Doesn't Look Too Edgy:</strong> CSS overhauled to create a cohesive style, from class structure to fonts, colors, and other attributes</li>
+							<li><strong>Just One Problem:</strong> I may have pointed this out already, but it seems like the navbar on this page is one extra pixel taller than it is on the other two pages. Right now I have no idea why.</li>
+							<li>Entries under June were not *fully* updated to represent the new CSS. This goes back to my idea of the Blog being representative of my growth. It could also end up being the case that the inconsistency bothers me later and I go back and update everything... shrug?</li>
+						</ul>
+					<h3>Global</h3>
+						<ul>
+							<li><strong>Collateral Damage:</strong> The Home and Sandbox pages were left a little unruly-looking in certain spots while I focused on the blog. This is because I updated the CSS for a couple of frequently-used styles - headers like <code>h3</code> and <code>h4</code> especially. Having those building blocks already sitting on those pages will definitely expedite re-building the style around those pages.</li>
+							<li><strong>Navbar:</strong> Finally figured out the CSS sorcery involved in allowing the welcome message area to be set apart from the links in terms of styling. The struggle of getting the welcome message to stop being highlighted on <code>hover</code> was real. To this point there seems to be a big difference between <code>.class .anotherclass{}</code> and <code>.class.anotherClass{}</code> in CSS, seeing as I've been able to do things with the latter that I struggled to figure out with the former. I'll need to look into what this syntax means.</li>
+						</ul>
+					<h3>Sandbox</h3>
+						<ul>
+							<li><strong>I Thought I Already Took Care Of This Lol:</strong> Fixed an error with the calculator where it would return an unexpected message when trying to divide by zero
+							<ul><li><em>TODO</em>: I guess I could still try and figure out how to display a unique message when the calculator would otherwise return "NaN". Spent some time on it when I addressed (or so I thought) the divide by zero issue but didn't come up with a working solution</li></ul></li>
+						</ul>
+					<h3>Home</h3>
+						<ul>
+							<li>No changes made to Home, but
+							<ul><li><em>TODO</em>: Write script that automatically fills the "Lastest Post" spot with the latest post on the Blog, instead of me having to remember to write it in every time. Got a pretty clear idea of how I would do it, so I'll give it a shot.</li></ul>
+							</li>
+						</ul>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="panel myPanel">
+			<div class="heading">
+				<div class="row">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionFifteen"><span class="headFont">
+						<div class="col-xs-9 headFont">CSS Experimentation Day</div>
+						<div class="col-xs-3 text-right">7/11/16 Notes</div>
+					</span></a>
+				</div>
+			</div>
+			<div id="accordionFifteen" class="panel-collapse collapse">
 				<div class="body">
 					<p><em>&emsp;My creative reservoirs are dried up from messing with the blog's CSS. No witty banter today!</p>
 					<p>&emsp;Tangentially, Pokemon Go came out last week, and it is terrific. <s>when it works</s></em></p>
@@ -86,10 +144,10 @@
 		<div class="panel myPanel">
 			<div class="heading">
 				<div class="row">
-					<a data-toggle="collapse" data-parent="#accordion" href="#accordionFourteen">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionFourteen"><span class="headFont">
 						<div class="col-xs-9">Compatibility Issues and User Recognition</div>
 						<div class="col-xs-3 text-right">7/6/16 Notes</div>
-					</a>
+					</span></a>
 				</div>
 			</div>
 			<div id="accordionFourteen" class="panel-collapse collapse">
@@ -156,10 +214,10 @@
 		<div class="panel myPanel">
 			<div class="heading">
 				<div class="row">
-					<a data-toggle="collapse" data-parent="#accordion" href="#accordionThirteen">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionThirteen"><span class="headFont">
 						<div class="col-xs-9">Sandbox LEVEL UP!</div>
 						<div class="col-xs-3 text-right">7/5/16 Notes</div>
-					</a>
+					</span></a>
 				</div>
 			</div>
 			<div id="accordionThirteen" class="panel-collapse collapse">

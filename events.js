@@ -29,16 +29,16 @@ function calculate(){
 	var one = parseFloat(numOne.value || 0);
 	var two = parseFloat(numTwo.value || 0);
 
-	if(op.value == "add"){
-		solution.innerHTML = "The sum is: " + (one + two);
+	if(op.value == "divide" && two == 0){
+		solution.innerHTML = "Please don't do that.";
 	} else if(op.value == "subtract"){
 		solution.innerHTML = "The difference is: " + (one - two);	
 	} else if(op.value == "multiply"){
 		solution.innerHTML = "The product is: " + (one * two);
 	} else if(op.value == "divide"){
 		solution.innerHTML = "The quotient is: " + (one / two);
-	} else if(op.value == "divide" && two == 0){
-		solution.innerHTML = "Please don't do that.";
+	} else if(op.value == "add"){
+		solution.innerHTML = "The sum is: " + (one + two);
 	}
 }
 
@@ -165,6 +165,6 @@ cb.addEventListener("click", clearLocal);
 
 function clearLocal(){
 	localStorage.clear();
-	alert('localStorage cleared!');
+	alert('localStorage cleared! Username reset.');
 	location.reload();
 }

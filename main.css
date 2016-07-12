@@ -11,14 +11,25 @@ body{
 }
 
 .ARGH{
-	background-color:#000000;
+	background: #000000 url("http://i.imgur.com/4rmwd6q.png") no-repeat right bottom fixed;
 }
 
 h1{
 	font-family: 'Montserrat', sans-serif;
 }
 
+h3{
+	color:#1B2F56;
+	font-family: 'Dosis', sans-serif;
+	letter-spacing: 1px
+}
 
+h4{
+	color:#826F1E;
+	font-family: 'Exodus-Sharpen';
+	font-size: 1.5em;
+	font-style: bold;
+}
 
 .vertical-line{
 	background-color: #114;
@@ -30,17 +41,7 @@ h1{
 /*custom navbar test*/
 .navbar-custom{
 	background-color:#223355;
-	border-color:#132342;
 	width: 100%;
-}
-
-.navbar-nav > .navbar-right > a{
-	text-align: right;
-	}
-
-.navbar-nav .result{
-	font-size: 0.9em;
-	text-transform: uppercase;
 }
 
 .navbar-custom .navbar-brand{
@@ -55,16 +56,13 @@ h1{
 }
 
 .navbar-custom .navbar-text{
-	color: #eceff1;
+	color: #C3A771;
 }
 
 .navbar-custom .navbar-nav > li > a{
-	color:#eceff1;
-}
-.navbar-custom .navbar-nav > li > a:hover, .navbar-nav > li > a:focus{
-	background-color: #132342;
-	color:#d7dcf6;
-	transition-duration:0.25s;
+	background-color: #223355;
+	color:#C3A771;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .navbar-custom .navbar-nav > .link > a, .navbar-custom .navbar-nav > .link > a:hover, .navbar-custom .navbar-nav > .link > a:focus{
@@ -79,6 +77,16 @@ h1{
 .navbar-custom .navbar-nav > .open > a, .navbar-custom .navbar-nav > .open > a:hover, .navbar-custom .navbar-nav > .open > a:focus{
 	background-color:#132342;
 	color:#d7dcf6;
+}
+
+#welcome{
+	color:#eceff1;
+}
+
+.navbar-nav .result{
+	color:#C3A771;
+	font-size: 0.9em;
+	text-transform: uppercase;
 }
 
 }
@@ -148,8 +156,8 @@ h1{
 }
 
 .myPanel{
-	background: #000000;
-	border: 1px solid #2b2bff;
+	background: rgba(0, 0, 0, 0.3);
+	border: 1px solid #5F538E;
 	border-radius: 5px;
 	margin-right:auto;
 	margin-left:auto;
@@ -158,13 +166,17 @@ h1{
 	transition-duration:0.8s;
 }
 
+.myPanel:hover{
+	border:1px solid #A6823D;
+	transition-duration: 0.2s;
+}
+
 .month{
-	background: #000000;
+	background: rgba(0, 0, 0, 0);
 	border: none;
-	box-shadow: inset 0px 0px 10px 20px #000;
 	font-family: Exodus-Sharpen;
 	font-size: 3.5em;
-	color: rgba(236, 239, 241, .6);
+	color: rgba(195, 180, 113, .8);
 	margin:auto;
 	padding-top:5px;
 	padding-bottom:5px;
@@ -172,28 +184,42 @@ h1{
 	transition-duration:5s;
 }
 
+.month:hover{
+	background-color: rbga(0, 0, 0, 0);
+	border:none;
+	box-shadow:none;
+	color:#C3B471;
+	letter-spacing:5px;
+	transition-duration:2s;
+}
+
 .myPanel .heading{
-	background: rgba(162, 182, 195, .2);
+	background: rgba(162, 182, 195, .1);
 	border-radius: 5px 5px 0 0;
-	color:#14146c;
 	padding:10px 20px;
 	font-family: 'Dosis', sans-serif;
 	font-size:1.3em;
 }
 
-/*.headFont{
-	color:#14146c;
-}*/
+.headFont{
+	color:#5F538E;
+	transition-duration: 0.3s;
+}
+
+.headFont:hover{
+	color:#A6823D;
+	transition-duration: 0.3s;
+}
 
 .myPanel .body{
 	background: rgba(255, 255, 255, .7);
 	padding: 10px 10px 5px 20px;
-	transition-duration:4s;
+	transition-duration:3s;
 }
 
 .myPanel .body:hover{
-	background:rgba(255,255,255, .9);
-	transition-duration: 2s;
+	background:rgba(255,255,255, .8);
+	transition-duration: 1.5s;
 }
 
 /*.myPanel:hover{
@@ -201,15 +227,6 @@ h1{
 	box-shadow:0px 0px 7px #001;
 	transition-duration:0.4s;
 }*/
-
-.month:hover{
-	background-color: #000000;
-	box-shadow:none;
-	color:#f7f8f9;
-	letter-spacing:5px;
-	transition-duration:2s;
-}
-
 
 .jumbotron .container .headingMain{
 	color:#14146c;
@@ -308,3 +325,24 @@ li.edit input{
 	opacity:1;
 	transition-duration: 0.3s;
 }
+
+.navbar-custom .navbar-nav > li > a:hover, .navbar-nav > li > a:focus{
+	background-color: #132342;
+	color:#d7dcf6;
+	transition-duration:0.25s;
+}
+
+.navbar-nav.test{
+	float:right;
+	padding-left:0;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:-15px;
+	margin-top:0px;
+	list-style: none;
+}
+
+.navbar-nav.test > li > a:hover, .navbar-nav.test > li > a:focus{
+	background-color:initial;
+}
+
