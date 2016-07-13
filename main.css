@@ -10,6 +10,10 @@ body{
 	font-family: 'Open Sans', sans-serif;
 }
 
+.HOME{
+	background: #000000;
+}
+
 .ARGH{
 	background: #000000 url("http://i.imgur.com/4rmwd6q.png") no-repeat right bottom fixed;
 }
@@ -229,11 +233,14 @@ h4{
 }*/
 
 .jumbotron .container .headingMain{
-	color:#14146c;
-	text-shadow: #333 1px 1px 5px;
+	color:#80622B;
+	font-family: 'Exodus-Sharpen';
+	line-height: 0.9;
+	/*text-shadow: #333 1px 1px 5px;*/
 }
 
 .media .media-heading{
+	font-style: bold;
 	color:#14146c;
 	padding:15px 0 0 0;
 }
@@ -245,13 +252,16 @@ h4{
 }
 
 .media .media-left .img-circle:hover{
+	border:3px solid #14146c;
 	opacity:1;
+	transition-duration:0.1s;
 }
 .media .media-left .img-circle{
-	border:3px solid #14146c;
 	height:128px;
 	opacity:0.8;
-	transition-duration:0.4s;
+	transition-duration:1s;
+	padding:2px;
+	margin:1%;
 	width:128px;
 }
 
@@ -346,3 +356,19 @@ li.edit input{
 	background-color:initial;
 }
 
+.revgroup{
+	width:80%;
+	padding-right:0;
+	padding-left:0;
+}
+
+.revpanel{
+	background: red;
+	background: rgba(255, 255, 255, .75);
+	transition-duration: 1.5s;
+}
+
+.revpanel:hover{
+	background: rgba(255, 255, 255, .9);
+	transition-duration: 2s;
+}
