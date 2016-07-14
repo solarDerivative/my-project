@@ -373,3 +373,13 @@ li.edit input{
 	background: rgba(255, 255, 255, .9);
 	transition-duration: 2s;
 }
+
+.genpanel{
+	background: rgba(255, 255, 255, .75);
+	padding:2px;
+	transition-duration: 1.5s;
+}
+.genpanel:hover{
+	background: rgba(255, 255, 255, .9);
+	transition-duration: 2s;
+}

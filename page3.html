@@ -54,12 +54,12 @@
 
 			<div class="myBanner" style=" background-image: url(https://s-media-cache-ak0.pinimg.com/736x/2a/ce/06/2ace06c2b58f3b818954c2514462d5d7.jpg); background-size:cover; border-radius:5px; text-shadow:0px 0px 8px #ddd;">
 				<div class="container content" style="padding-right:60px">
-					<h1>I am an anomaly; Please, disregard</h1>
+					<h1>Why</h1>
 				</div>
 			</div>
 			<br>
-			<div class="panel revpanel">
-				<h4>Calculator</h4>
+			<div class="panel genpanel">
+				<h3>&emsp;Calculator</h3>
 				<select id="operation" onchange="OnSelectedIndexChange()">
 					<option value="add">Add</option>
 					<option value="subtract">Subtract</option>
@@ -74,8 +74,8 @@
 				</div>
 			</div>
 			<hr>
-			<div class="panel revpanel">
-				<h4>Slideshow</h4>
+			<div class="panel genpanel">
+				<h3>&emsp;Slideshow</h3>
 				
 				<!-- <div class="row">
 					<div class="col-sm-5">
@@ -102,15 +102,67 @@
 				</div>
 			</div>
 			<hr>
+			
+			<div class="panel genpanel">
+				<h3>&emsp;Set Username</h3>
+				Current Username: <div class="result"></div>
+				<form id="form" onsubmit="window.location.reload();" />
+					<input type="text" id="userInput"/>
+					<input type="submit" onclick="getUsername();" />
+				</form>
+				<br>
+				<input id="clearButton" type="button" value="Wipe Local Storage" />
+				<p>Your username will be erased. You can also just set it again right afterwards, so, no worries.</p>
 			</div>
-			<h4>Set Username</h4>
-			<form id="form" onsubmit="window.location.reload();" />
-				<input type="text" id="userInput"/>
-				<input type="submit" onclick="getUsername();" />
-			</form>
-			Current Username: <div class="result"></div>
-			<br>
-			<input id="clearButton" type="button" value="Wipe Local Storage" />
+			<hr>
+
+			<div class="panel revpanel">
+				<div class="media">
+		  			<div class="media-left">
+		      			<img class="media-object img-circle" src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAApAAAAJDZlODlmMjMwLTA0ZmEtNDFiMy1iN2I3LWE1M2Y1ZTRjOGE3OA.jpg" alt="Where's the beef?">
+		  			</div>
+		  			<div class="media-body">
+		  			<h4 class="media-heading">Todd, 37</h4>
+		    			<em>Wow, great! Helped a ton, thanks!</em>
+		  			</div>
+				</div>
+			</div>
+				
+			<div class="panel revpanel">
+				<div class="media">
+		  			<div class="media-left">
+		      			<img class="media-object img-circle" src="http://www.iamalwayswithyou.com/wp-content/uploads/2015/10/dinosaur_stock___14_by_nigav_stock-d68h3eh.png" alt="??">
+		  			</div>
+		  			<div class="media-body">
+		  			<h4 class="media-heading">Ferdinand, 953</h4>
+		    			<em>Don't ever talk to me, or my son, again</em>
+		  			</div>
+				</div>
+			</div>
+
+			<div class="panel revpanel">
+				<div class="media">
+		  			<div class="media-left">
+		      			<img class="media-object img-circle" src="http://i.imgur.com/I8r3KZC.png" alt="big meaty claws">
+		  			</div>
+		  			<div class="media-body">
+		  			<h4 class="media-heading">Ryoma, 26 in Lobster Years</h4>
+		    			<em>YOU HAVE BREATHED YOUR LAST!</em>
+		  			</div>
+				</div>
+			</div>
+
+			<div class="panel revpanel">
+				<div class="media">
+		  			<div class="media-left">
+		      			<img class="media-object img-circle" src="https://yt3.ggpht.com/-D4hmSc_yJ2Y/AAAAAAAAAAI/AAAAAAAAAAA/ahVSJgSaS_E/s900-c-k-no-rj-c0xffffff/photo.jpg" alt="medium meaty claws">
+		  			</div>
+		  			<div class="media-body">
+		  			<h4 class="media-heading">Breathing my last</h4>
+		    			<em>Great Barrier Reef, he was right</em>
+		  			</div>
+				</div>
+			</div>
 			<!-- <div id="checklist">
 				<ul>
 					<li>
@@ -126,6 +178,8 @@
 				</ul>
 			</div> -->
 
+			</div>
+
 		<footer>
 			<hr>
 			<div class="footer">
@@ -140,6 +194,7 @@
 
 	<script src="username.js"></script>
 	<script src="events.js"></script>
+	<script src="randcontent.js"></script>
 	
 	</body>
 </html>
