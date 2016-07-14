@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 		<link rel="stylesheet" href="main.css">
 	</head>
-	<body data-gclp-initialized="true" data-gistbox-initialized="true">
+	<body class="HOME" data-gclp-initialized="true" data-gistbox-initialized="true">
 		<header class="navbar-custom" role="banner">
 				<nav role="navigation">
 				    <!-- Brand and toggle get grouped for better mobile display -->
@@ -43,64 +43,66 @@
 
 
 		<!-- scripts should never go at the top, mostly -->
-		<div class="container">
-			<div class="jumbotron">
-				<h1>THE SANDBOX</h1>
-				<p class="lead">Where Javascript goes to die</p>
+		<div class="jumbotron myJumbotron">
+			<div class="container">
+				<h1 class="headingMain" style="line-height: 1.1"><strong>The Sandbox</strong><br><font size="3em">&emsp;&emsp;&emsp;Where Javascript goes to die</font></h1>
 			</div>
-		</div>
+		</div> <!-- End of Jumbotron -->
 
-		<main><div class="container">
+		
+		<div class="container">
+
 			<div class="myBanner" style=" background-image: url(https://s-media-cache-ak0.pinimg.com/736x/2a/ce/06/2ace06c2b58f3b818954c2514462d5d7.jpg); background-size:cover; border-radius:5px; text-shadow:0px 0px 8px #ddd;">
 				<div class="container content" style="padding-right:60px">
-					<h1>Events</h1>
+					<h1>I am an anomaly; Please, disregard</h1>
 				</div>
 			</div>
 			<br>
-			<h4>Basic Calculator</h4>
-			<select id="operation" onchange="OnSelectedIndexChange()">
-				<option value="add">Add</option>
-				<option value="subtract">Subtract</option>
-				<option value="multiply">Multiply</option>
-				<option value="divide">Divide</option>
-			</select>
-			<div class="row">
-				<div class="col-sm-6">
-					<input id="num-one" value="0"> <span id="sign"> + </span> <input id="num-two" value="0">
+			<div class="panel revpanel">
+				<h4>Calculator</h4>
+				<select id="operation" onchange="OnSelectedIndexChange()">
+					<option value="add">Add</option>
+					<option value="subtract">Subtract</option>
+					<option value="multiply">Multiply</option>
+					<option value="divide">Divide</option>
+				</select>
+				<div class="row">
+					<div class="col-sm-6">
+						<input id="num-one" value="0"> <span id="sign"> + </span> <input id="num-two" value="0">
+					</div>
+					<div class="col-sm-6"><p id="solution"></p></div>
 				</div>
-				<div class="col-sm-6"><p id="solution"></p></div>
 			</div>
-
 			<hr>
+			<div class="panel revpanel">
+				<h4>Slideshow</h4>
+				
+				<!-- <div class="row">
+					<div class="col-sm-5">
+						<ul>
+							<li><a data-img="simon-pic" id="simon" href="#/">Simon Cowell</a></li>
+							<li><a data-img="bruce-pic" id="bruce" href="#/">Bruce Willis</a></li>
+							<li><a data-img="ben-pic" id="ben" href="#/">Ben Carson</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-7">
+						<img class="hide" id="simon-pic" src="http://i.imgur.com/jAVX5g9.jpg">
+						<img class="hide" id="bruce-pic" src="http://images.mentalfloss.com/sites/default/files/styles/article_640x430/public/rickrollheader.png">
+						<img class="hide" id="ben-pic" src="http://lh5.googleusercontent.com/8NHAEEFut-isfzjSDIe0sOgsk3OsECC5PsWeB1i2ZffOoBVA0szXdNi_dHmxak61iWI9Q_Ha1oCI78rxs_RUKIs_HWixiJmLUXsZLE2lJGmWs8i1CYcJ9rPF">
+					</div>
+				</div> -->
 
-			<h4>Pictures</h4>
-			
-			<!-- <div class="row">
-				<div class="col-sm-5">
-					<ul>
-						<li><a data-img="simon-pic" id="simon" href="#/">Simon Cowell</a></li>
-						<li><a data-img="bruce-pic" id="bruce" href="#/">Bruce Willis</a></li>
-						<li><a data-img="ben-pic" id="ben" href="#/">Ben Carson</a></li>
-					</ul>
+				<div class="mySlideshow">
+					<img class="mySlides" src="http://i.imgur.com/jAVX5g9.jpg">
+					<img class="mySlides" src="http://images.mentalfloss.com/sites/default/files/styles/article_640x430/public/rickrollheader.png">
+					<img class="mySlides" src="http://lh5.googleusercontent.com/8NHAEEFut-isfzjSDIe0sOgsk3OsECC5PsWeB1i2ZffOoBVA0szXdNi_dHmxak61iWI9Q_Ha1oCI78rxs_RUKIs_HWixiJmLUXsZLE2lJGmWs8i1CYcJ9rPF">
+
+					<span class="prev" onclick="plusDivs(-1)">&#10094;</span>
+					<span class="next" onclick="plusDivs(+1)">&#10095;</span>
 				</div>
-				<div class="col-sm-7">
-					<img class="hide" id="simon-pic" src="http://i.imgur.com/jAVX5g9.jpg">
-					<img class="hide" id="bruce-pic" src="http://images.mentalfloss.com/sites/default/files/styles/article_640x430/public/rickrollheader.png">
-					<img class="hide" id="ben-pic" src="http://lh5.googleusercontent.com/8NHAEEFut-isfzjSDIe0sOgsk3OsECC5PsWeB1i2ZffOoBVA0szXdNi_dHmxak61iWI9Q_Ha1oCI78rxs_RUKIs_HWixiJmLUXsZLE2lJGmWs8i1CYcJ9rPF">
-				</div>
-			</div> -->
-
-			<div class="mySlideshow">
-				<img class="mySlides" src="http://i.imgur.com/jAVX5g9.jpg">
-				<img class="mySlides" src="http://images.mentalfloss.com/sites/default/files/styles/article_640x430/public/rickrollheader.png">
-				<img class="mySlides" src="http://lh5.googleusercontent.com/8NHAEEFut-isfzjSDIe0sOgsk3OsECC5PsWeB1i2ZffOoBVA0szXdNi_dHmxak61iWI9Q_Ha1oCI78rxs_RUKIs_HWixiJmLUXsZLE2lJGmWs8i1CYcJ9rPF">
-
-				<span class="prev" onclick="plusDivs(-1)">&#10094;</span>
-				<span class="next" onclick="plusDivs(+1)">&#10095;</span>
 			</div>
-
 			<hr>
-
+			</div>
 			<h4>Set Username</h4>
 			<form id="form" onsubmit="window.location.reload();" />
 				<input type="text" id="userInput"/>
@@ -123,12 +125,10 @@
 					</li>
 				</ul>
 			</div> -->
-		</main>
 
 		<footer>
 			<hr>
-			<div class="container">
-				<div class="footer">
+			<div class="footer">
 				<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>  2016 pls no stealing my imaginary website <br> Best viewed/Most likely to function in the latest version of Google Chrome or Mozilla Firefox
 			</div>
 		</footer>

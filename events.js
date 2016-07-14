@@ -30,7 +30,7 @@ function calculate(){
 	var two = parseFloat(numTwo.value || 0);
 
 	if(op.value == "divide" && two == 0){
-		solution.innerHTML = "Please don't do that.";
+		solution.innerHTML = "ERROR CODE: PDDT<br>Please don't do that";
 	} else if(op.value == "subtract"){
 		solution.innerHTML = "The difference is: " + (one - two);	
 	} else if(op.value == "multiply"){
