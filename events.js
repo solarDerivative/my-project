@@ -161,10 +161,12 @@ function itemKeypress(event) {
 }*/
 
 var cb = document.getElementById("clearButton");
+var toggle = document.getElementById("showing");
 cb.addEventListener("click", clearLocal);
 
 function clearLocal(){
 	localStorage.clear();
-	alert('localStorage cleared! Username reset.');
+	alert('localStorage cleared! Username and Profile Picture reset.');
 	location.reload();
+
 }

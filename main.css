@@ -50,6 +50,7 @@ h4{
 
 .navbar-custom .navbar-brand{
 	color:#eceff1;
+	font-size: 1.125em;
 	font-family: 'Exodus-Sharpen';
 	transition-duration:0.25s;
 
@@ -67,6 +68,7 @@ h4{
 	background-color: #223355;
 	color:#C3A771;
 	font-family: 'Montserrat', sans-serif;
+	font-size: 0.875em;
 }
 
 .navbar-custom .navbar-nav > .link > a, .navbar-custom .navbar-nav > .link > a:hover, .navbar-custom .navbar-nav > .link > a:focus{
@@ -251,12 +253,16 @@ h4{
 	padding:10px 0 0 0;
 }
 
-.media .media-left .img-circle:hover{
+.bbyCircle{
+	border-radius:50%;
+}
+
+.img-circle:hover{
 	border:3px solid #14146c;
 	opacity:1;
 	transition-duration:0.1s;
 }
-.media .media-left .img-circle{
+.img-circle{
 	height:128px;
 	opacity:0.8;
 	transition-duration:1s;
@@ -365,6 +371,7 @@ li.edit input{
 
 .revpanel{
 	background: rgba(255, 255, 255, .75);
+	display:none;
 	padding:2px;
 	transition-duration: 1.5s;
 }
@@ -382,4 +389,16 @@ li.edit input{
 .genpanel:hover{
 	background: rgba(255, 255, 255, .9);
 	transition-duration: 2s;
+}
+
+.revPanels{
+	padding-left:0px;
+}
+
+.WHAT{
+	height:50px;
+}
+
+.WHAT2{
+	height:20px;
 }

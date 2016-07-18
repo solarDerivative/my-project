@@ -11,7 +11,7 @@
 	</head>
 	<body class="HOME" data-gclp-initialized="true" data-gistbox-initialized="true">
 		<header class="navbar-custom" role="banner">
-				<nav role="navigation">
+				<nav class="WHAT" role="navigation">
 				    <!-- Brand and toggle get grouped for better mobile display -->
 				    <div class="navbar-header">
 				    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -35,12 +35,11 @@
 					    </ul>
 					    <ul class="nav navbar-nav test">
 					    	<li><div class="vertical-line"></li>
-							<li><a><span id="welcome"></span> <span class="result"></span></a></li>
+							<li><a><span id="welcome"></span> <span class="result"></span> <img class="myImg bbyCircle" alt="idk" height="24" width="24"></a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
 		</header>
-
 
 		<!-- scripts should never go at the top, mostly -->
 		<div class="jumbotron myJumbotron">
@@ -106,62 +105,24 @@
 			<div class="panel genpanel">
 				<h3>&emsp;Set Username</h3>
 				Current Username: <div class="result"></div>
-				<form id="form" onsubmit="window.location.reload();" />
-					<input type="text" id="userInput"/>
+				<form onsubmit="window.location.reload();" />
+					<input type="text" id="nameInput" maxlength="10" />
 					<input type="submit" onclick="getUsername();" />
 				</form>
-				<br>
+
+				<hr>
+
+				<h3>&emsp;Set Picture</h3>
+				<form onsubmit="window.location.reload();" />
+					<input type="text" id="picInput"/>
+					<input type="submit" onclick="getPicture();" />
+				</form>
+				Current Picture: <img class="myImg" alt="idk" height="100" width="100">
+
+				<hr>
+
 				<input id="clearButton" type="button" value="Wipe Local Storage" />
-				<p>Your username will be erased. You can also just set it again right afterwards, so, no worries.</p>
-			</div>
-			<hr>
-
-			<div class="panel revpanel">
-				<div class="media">
-		  			<div class="media-left">
-		      			<img class="media-object img-circle" src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAApAAAAJDZlODlmMjMwLTA0ZmEtNDFiMy1iN2I3LWE1M2Y1ZTRjOGE3OA.jpg" alt="Where's the beef?">
-		  			</div>
-		  			<div class="media-body">
-		  			<h4 class="media-heading">Todd, 37</h4>
-		    			<em>Wow, great! Helped a ton, thanks!</em>
-		  			</div>
-				</div>
-			</div>
-				
-			<div class="panel revpanel">
-				<div class="media">
-		  			<div class="media-left">
-		      			<img class="media-object img-circle" src="http://www.iamalwayswithyou.com/wp-content/uploads/2015/10/dinosaur_stock___14_by_nigav_stock-d68h3eh.png" alt="??">
-		  			</div>
-		  			<div class="media-body">
-		  			<h4 class="media-heading">Ferdinand, 953</h4>
-		    			<em>Don't ever talk to me, or my son, again</em>
-		  			</div>
-				</div>
-			</div>
-
-			<div class="panel revpanel">
-				<div class="media">
-		  			<div class="media-left">
-		      			<img class="media-object img-circle" src="http://i.imgur.com/I8r3KZC.png" alt="big meaty claws">
-		  			</div>
-		  			<div class="media-body">
-		  			<h4 class="media-heading">Ryoma, 26 in Lobster Years</h4>
-		    			<em>YOU HAVE BREATHED YOUR LAST!</em>
-		  			</div>
-				</div>
-			</div>
-
-			<div class="panel revpanel">
-				<div class="media">
-		  			<div class="media-left">
-		      			<img class="media-object img-circle" src="https://yt3.ggpht.com/-D4hmSc_yJ2Y/AAAAAAAAAAI/AAAAAAAAAAA/ahVSJgSaS_E/s900-c-k-no-rj-c0xffffff/photo.jpg" alt="medium meaty claws">
-		  			</div>
-		  			<div class="media-body">
-		  			<h4 class="media-heading">Breathing my last</h4>
-		    			<em>Great Barrier Reef, he was right</em>
-		  			</div>
-				</div>
+				<p>Your username and picture will be erased. You can also just set them again immediately afterwards, so no worries.</p>
 			</div>
 			<!-- <div id="checklist">
 				<ul>
@@ -194,7 +155,6 @@
 
 	<script src="username.js"></script>
 	<script src="events.js"></script>
-	<script src="randcontent.js"></script>
 	
 	</body>
 </html>

@@ -11,7 +11,7 @@
 	</head>
 	<body class="ARGH">
 		<header class="navbar-custom" role="banner">
-				<nav role="navigation">
+				<nav class="WHAT" role="navigation">
 				    <!-- Brand and toggle get grouped for better mobile display -->
 				    <div class="navbar-header">
 				    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -33,12 +33,10 @@
 					        <li><a href="page3.html">SANDBOX</a></li>
 					        <li><a href="https://github.com/solarDerivative/my-project">GITHUB</a></li>
 				    	</ul>
-				    	
 				    	<ul class="nav navbar-nav test">
-				    		<li><div class="vertical-line"></div></li>
-							<li><a><span id="welcome"></span> <span class="result"></span></a></li>
+				    		<li><div class="vertical-line"></li>
+							<li><a class="WHAT2"><span id="welcome"></span> <span class="result"></span> <img class="myImg bbyCircle" alt="idk" height="24" width="24"></a></li>
 						</ul>
-						</span>
 					</div><!-- /.navbar-collapse -->
 				</nav>
 		</header>
@@ -52,13 +50,56 @@
 		<div class="panel myPanel">
 			<div class="heading">
 				<div class="row">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionEighteen"><span class="headFont">
+						<div class="col-xs-9">RNGsus Bless</div>
+						<div class="col-xs-3 text-right">7/18/16 Notes</div>
+					</span></a>
+				</div>
+			</div>
+			<div id="accordionEighteen" class="panel-collapse collapse in">
+				<div class="body">
+					<em><p>&emsp;Finished my latest script. Out of an array of reviews, three will be displayed randomly. Something I was surprised I'd have to add (but makes sense looking back) was code to scramble the contents of the array so that they'd appear in random order.</p>
+					<p>&emsp;In other words, in an array that looks like <code>[0, 1, 2, 3, 4]</code>, I made code that randomly selects 3 and displays them. The 3 selected would show up as <code>[0, 2, 4]</code> or <code>[0, 1, 5]</code>, for example. Always in order of lowest index number to highest index number. So by randomly scrambling the contents of the array before cycling through them to display them, the result is True Randomness<sup>TM</sup>.</p>
+					<p>&emsp;<s>Coming Soon<sup>TM</sup>: A script to automatically grab the top blog post for the home page</s> I guess there's no easy way to do this without using jQuery, so nevermind?</p>
+					<p>&emsp;Also... EVO this past weekend?? <strong>YOOOOOOO</strong></p>
+					</em>
+					<hr>
+					<p><h4>10:15</h4></p>
+					<h3>Home</h3>
+						<ul>
+							<li><strong>MR KRABBS IS A ROBOT:</strong> 2 more reviews added for a total of 5.</li>
+							<li><strong>Time to Reroll? Bungie Plz:</strong> All reviews are set to <code>display:none</code>, a script will cycle through and randomly set three to <code>display:block</code>.
+						</ul>
+					<p><h4>12:00</h4></p>
+					<h3>Blog</h3>
+						<ul>
+							<li><strong>?????:</strong> Finally fixed the pixel offset issue with the navbar on this page by hard-coding the height into the CSS... still no idea why the issue only happened on this page. Maybe because there's no jumbotron directly below the navbar...? But that seems dumb??
+						</ul>
+					<p><h4>3:30</h4></p>
+					<h3>Global</h3>
+						<ul>
+							<li><strong>SO MANY THING:</strong> Font sizes converted from px to em</li>
+							<li>User greeting area now includes space for a profile picture</li>
+						</ul>
+					<h3>Sandbox</h3>
+						<ul>
+							<li><strong>NEW SCRIPT:</strong> In the same vein as the username, users may now submit a URL to use as a profile picture
+							<li>10 Character Limit imposed for usernames to help the navbar break less</li>
+						</li>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel myPanel">
+			<div class="heading">
+				<div class="row">
 					<a data-toggle="collapse" data-parent="#accordion" href="#accordionSeventeen"><span class="headFont">
 						<div class="col-xs-9">Awkward</div>
 						<div class="col-xs-3 text-right">7/13/16 Notes</div>
 					</span></a>
 				</div>
 			</div>
-			<div id="accordionSeventeen" class="panel-collapse collapse in">
+			<div id="accordionSeventeen" class="panel-collapse collapse">
 				<div class="body">
 					<em><p>&emsp;It started out simply enough. "How should I start out today's pre-patch notes text?"</p>
 					<p>&emsp;It's funny, looking back at how utterly, utterly foolish I was then. So young. Naive.</p>
