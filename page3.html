@@ -112,7 +112,7 @@
 
 				<hr>
 
-				<h3>&emsp;Set Picture</h3>
+				<h3>&emsp;Set Picture URL</h3>
 				<form onsubmit="window.location.reload();" />
 					<input type="text" id="picInput"/>
 					<input type="submit" onclick="getPicture();" />
@@ -121,9 +121,89 @@
 
 				<hr>
 
+				<h3>&emsp;Submit Text</h3>
+				<form onsubmit="window.location.reload();" />
+					<textarea id="descInput" rows="2" cols="5"></textarea>
+					<input type="submit" onclick="getReview();" />
+				</form>
+
+				<hr>
+
 				<input id="clearButton" type="button" value="Wipe Local Storage" />
 				<p>Your username and picture will be erased. You can also just set them again immediately afterwards, so no worries.</p>
 			</div>
+			<hr>
+
+			<div class="container">
+			<ul class="revPanels">
+			<li class="panel revpanel RPTest">
+				<div class="media">
+		  			<div class="media-left">
+		      			<img class="media-object img-circle" src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAApAAAAJDZlODlmMjMwLTA0ZmEtNDFiMy1iN2I3LWE1M2Y1ZTRjOGE3OA.jpg" alt="Where's the beef?">
+		  			</div>
+		  			<div class="media-body">
+		  			<h4 class="media-heading">Todd</h4>
+		    			<em>Wow, great! Helped a ton, thanks!</em>
+		  			</div>
+				</div>
+			</li>
+			<li class="panel revpanel RPTest">
+				<div class="media">
+		  			<div class="media-left">
+		      			<img class="media-object img-circle" src="http://www.iamalwayswithyou.com/wp-content/uploads/2015/10/dinosaur_stock___14_by_nigav_stock-d68h3eh.png" alt="??">
+		  			</div>
+		  			<div class="media-body">
+		  			<h4 class="media-heading">Ferdinand</h4>
+		    			<em>Don't ever talk to me, or my son, again</em>
+		  			</div>
+				</div>
+			</li>
+			<li class="panel revpanel RPTest">
+				<div class="media">
+		  			<div class="media-left">
+		      			<img class="media-object img-circle" src="http://i.imgur.com/I8r3KZC.png" alt="big meaty claws">
+		  			</div>
+		  			<div class="media-body">
+		  			<h4 class="media-heading">Ryoma</h4>
+		    			<em>YOU HAVE BREATHED YOUR LAST!</em>
+		  			</div>
+				</div>
+			</li>
+			<li class="panel revpanel RPTest">
+				<div class="media">
+		  			<div class="media-left">
+		      			<img class="media-object img-circle" src="http://i.imgur.com/PvdWinC.png" alt="medium meaty claws">
+		  			</div>
+		  			<div class="media-body">
+		  			<h4 class="media-heading">Breathing My Last</h4>
+		    			<em>Great Barrier Reef, he was right</em>
+		  			</div>
+				</div>
+			</li>
+			<li class="panel revpanel RPTest">
+				<div class="media">
+		  			<div class="media-left">
+		      			<img class="media-object img-circle" src="http://i.imgur.com/j74ckXK.gif" alt="intense">
+		  			</div>
+		  			<div class="media-body">
+		  			<h4 class="media-heading">Moon Moon</h4>
+		    			<em>woof</em>
+		  			</div>
+				</div>
+			</li>
+			<li class="panel revpanel RPTest">
+				<div class="media">
+		  			<div class="media-left">
+		      			<img id="userP" class="media-object img-circle" src="http://blog.algonquinstudios.com/wp-content/uploads/2014/04/anonymous.gif" alt="u">
+		  			</div>
+		  			<div class="media-body">
+		  			<h4 id="userH" class="media-heading"></h4>
+		    			<em id="userB"></em>
+		  			</div>
+				</div>
+			</li>
+			</ul>
+		</div>
 			<!-- <div id="checklist">
 				<ul>
 					<li>

@@ -50,13 +50,62 @@
 		<div class="panel myPanel">
 			<div class="heading">
 				<div class="row">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionNineteen"><span class="headFont">
+						<div class="col-xs-9">Nearing Something Whole</div>
+						<div class="col-xs-3 text-right">7/19/16 Notes</div>
+					</span></a>
+				</div>
+			</div>
+			<div id="accordionNineteen" class="panel-collapse collapse in">
+				<div class="body">
+					<em><p>&emsp;Before yesterday, I thought I still had a decent ways to go to this project nearing completion. But then I breezed through those two scripts in one day - apparently, I overestimated how long it'd take me to figure those things out.</p>
+					<p>&emsp;So, as far as functionality and appearances go, I would expect ReviewCrews to be pretty much done this time next month. Maybe even sooner? After it looks and feels the way I want it to, I'm going to try and re-do most or all the code. Throughout the learning process the most important thing for me to figure out has been getting things to work, which has been a process of snowballing parts onto the projects. So what I need to learn next is coding <strong>well</strong>. Getting the most done with as few lines of code as possible, making sure my code is open, flexible, adaptable. Consolidating repetition, and so on.</p>
+					<p>&emsp;Having taken a cumulative seven years or so of Spanish classes, I guess the transition is like, okay, you've been studying and studying and now you know a good amount of vocabulary, you understand verb conjugation and most grammatical rules, and you can do these things on paper by yourself just fine given the time. So, to really put yourself to the test, you've got to have - you've got to maintain a conversation with somebody. You've got to keep up with others and adapt what you've learned to different contexts in real-time.</p>
+					<p>&emsp;I mean, it's all language, and society didn't develop language so that people could talk to themselves.</p>
+					<br>
+					<p>You know, kind of like...</p>
+					<p>...what I'm doing with this blog?</p>
+					<br>
+					<p>:D</p>
+					</em>
+					<hr>
+					<p><h4>11:00</h4></p>
+					<h3>Home</h3>
+						<ul>
+							<li><strong>Sorry, "Cool Widget":</strong> Widgets removed from homepage</li>
+							<li><strong>"Society Didn't Develop Language so that People Could Talk to Themselves":</strong> <s>ReviewCrews</s> -> "<strong>The Echo Chamber</strong>"</li>
+							<ul><li>There isn't so much product review going on, is there? I'm not planning to flesh it out that far, either, so by design of the Home page, the site really acts more as a kind of "RNG-Twitter". Thus, the re-branding</li></ul>
+						</ul>
+					<h3>Global</h3>
+						<ul>
+							<li>Minor CSS changes to some headers and panels</li>
+						</ul>
+					<p><em>&emsp;Beginning to think bigger... maybe I should go all the way with the "RNG-Twitter" idea? Put the website online, allow the website to permanently store user input and do what the home page currently does. Certainly an inspired project that serves a purpose will be more fulfilling and will look better on a resume? Maybe I should focus on reaching a stopping point with this project and learn a framework first...? It's a pretty cool idea though!</em></p>
+
+					<p><h4>14:30</h4></p>
+					<h3>Sandbox</h3>
+						<ul>
+							<li>Put in placeholder for submitting a description</li>
+						</ul>
+					<em><p>&emsp;Duuuuude OK. So I was looking at all the code that I wrote recently, and so far I've ended up with three functions that "get user input at a location and store it locally" and two and a half functions that "show stored local content at at least one location".</p>
+					<p>&emsp;And I'm looking at it going, OK, I should be able to consolidate all of this, right? Basically have one "get" function that works for whatever wants to use it, and have a "show" function that works for whatever wants to use it?</p>
+					<p>&emsp;So "good code" means (in part) not repeating yourself, so I figured I'd try and hit this up as my next big goal. And, well. Oof.</p>
+					<p>&emsp;So far this is looking more complicated than anything I've done so far, since there are many moving parts within each function, so it's not as simple as mushing three into one. I also have to figure out what to do all of the extraneous stuff.</p>
+					<p>&emsp;Hmm. So yeah! This is my next goal. Pretty excited to hit another roadblock. Maybe I'm not at close to plateauing with this project as it seemed!</p></em>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel myPanel">
+			<div class="heading">
+				<div class="row">
 					<a data-toggle="collapse" data-parent="#accordion" href="#accordionEighteen"><span class="headFont">
 						<div class="col-xs-9">RNGsus Bless</div>
 						<div class="col-xs-3 text-right">7/18/16 Notes</div>
 					</span></a>
 				</div>
 			</div>
-			<div id="accordionEighteen" class="panel-collapse collapse in">
+			<div id="accordionEighteen" class="panel-collapse collapse">
 				<div class="body">
 					<em><p>&emsp;Finished my latest script. Out of an array of reviews, three will be displayed randomly. Something I was surprised I'd have to add (but makes sense looking back) was code to scramble the contents of the array so that they'd appear in random order.</p>
 					<p>&emsp;In other words, in an array that looks like <code>[0, 1, 2, 3, 4]</code>, I made code that randomly selects 3 and displays them. The 3 selected would show up as <code>[0, 2, 4]</code> or <code>[0, 1, 5]</code>, for example. Always in order of lowest index number to highest index number. So by randomly scrambling the contents of the array before cycling through them to display them, the result is True Randomness<sup>TM</sup>.</p>
@@ -68,7 +117,7 @@
 					<h3>Home</h3>
 						<ul>
 							<li><strong>MR KRABBS IS A ROBOT:</strong> 2 more reviews added for a total of 5.</li>
-							<li><strong>Time to Reroll? Bungie Plz:</strong> All reviews are set to <code>display:none</code>, a script will cycle through and randomly set three to <code>display:block</code>.
+							<li><strong>Time to Reroll? Bungie Plz:</strong> All reviews are set to <code>display:none</code>, a script will cycle through and randomly set three to <code>display:block</code>.</li>
 						</ul>
 					<p><h4>12:00</h4></p>
 					<h3>Blog</h3>

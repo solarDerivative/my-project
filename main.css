@@ -20,6 +20,7 @@ body{
 
 h1{
 	font-family: 'Montserrat', sans-serif;
+	margin:0;
 }
 
 h3{
@@ -238,6 +239,7 @@ h4{
 	color:#80622B;
 	font-family: 'Exodus-Sharpen';
 	line-height: 0.9;
+	margin:none;
 	/*text-shadow: #333 1px 1px 5px;*/
 }
 
@@ -381,9 +383,15 @@ li.edit input{
 	transition-duration: 2s;
 }
 
+.revpanel.RPTest{
+	display:block;
+}
+
 .genpanel{
 	background: rgba(255, 255, 255, .75);
-	padding:2px;
+	padding:8px;
+	padding-left:16px;
+	padding-right:16px;
 	transition-duration: 1.5s;
 }
 .genpanel:hover{
@@ -401,4 +409,9 @@ li.edit input{
 
 .WHAT2{
 	height:20px;
+}
+
+#descInput{
+	height:6em;
+	width:15em;
 }
