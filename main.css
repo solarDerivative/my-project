@@ -1,3 +1,10 @@
+/*
+	Child of an element: (div div p{})
+
+	DIRECT child of an element: (div > p{})
+	This only grabs <p>s that are nested directly inside of <div>s; it won't grab any paragraphs that are, say, nested inside lists that are in turn nested inside <div>s.
+*/
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Dosis:600);
@@ -8,6 +15,17 @@
 
 body{
 	font-family: 'Open Sans', sans-serif;
+}
+
+table, table *{
+	border:1px solid #000000;
+	margin:auto;
+	padding:5px;
+}
+tr:nth-child(2) > td:nth-child(2){
+	background-color:rgba(40,0,100,0.8);
+	color:#A6823D;
+	font-weight:bold;
 }
 
 .HOME{
