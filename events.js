@@ -29,8 +29,10 @@ function calculate(){
 	var one = parseFloat(numOne.value || 0);
 	var two = parseFloat(numTwo.value || 0);
 
-	if(op.value == "divide" && two == 0){
-		solution.innerHTML = "ERROR CODE: PDDT<br>Please don't do that";
+	if(isNaN(one) || isNaN(two)){
+		solution.innerHTML = "What you have given me is not a number.<br>Please reconsider.";
+	} else if(op.value == "divide" || "modulo" && two == 0){
+		solution.innerHTML = "Dividing by zero is bad mmkay?";
 	} else if(op.value == "subtract"){
 		solution.innerHTML = "The difference is: " + (one - two);	
 	} else if(op.value == "multiply"){
@@ -39,6 +41,8 @@ function calculate(){
 		solution.innerHTML = "The quotient is: " + (one / two);
 	} else if(op.value == "add"){
 		solution.innerHTML = "The sum is: " + (one + two);
+	} else if(op.value == "modulo"){
+		solution.innerHTML = "The remainder of " + one + " divided by " + two + ": " + (one % two);
 	}
 }
 
@@ -62,6 +66,8 @@ function OnSelectedIndexChange(){
 		sign.innerHTML = " * ";
 	} else if(document.getElementById("operation").value == "divide"){
 		sign.innerHTML = " / ";
+	} else if(document.getElementById("operation").value == "modulo"){
+		sign.innerHTML = " % ";
 	} else {
 		sign.innerHTML = " + ";
 	}
