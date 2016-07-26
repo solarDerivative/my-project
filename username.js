@@ -1,58 +1,63 @@
-window.onload = showUsername();
-window.onload = showPicture();
-window.onload = createReview();
+// We want to store input given to us by the user. We want to store a string
+// for a username, a string for an image URL, and a string for a description.
+//
+// We want to spit out these strings onto an html template.
 
-//objects
-//inputs - strings
+window.onload = returnInfo("result", userid);
 
-var inputName = document.getElementById("inputN");
-var inputImg = document.getElementById("inputI");
-var inputBody = document.getElementById("inputB");
-
-//outputs - arrays
-
-var outputName = document.getElementsByClassName("outputN");
-var outputImg = document.getElementsByClassName("outputI");
-var outputBody = document.getElementsByClassName("outputB");
-
-//object constructors
-
-function user(name, img){
-	//"methods" which call values
-	this.userName = name;
-	this.userImg = img;
+function User(userid, pic){
+	this.userid = userid;
+	this.pic = pic;
 }
 
-function post(name, img, body){
-	//"methods" which point to values
-	this.postName = name;
-	this.postImg = img;
-	this.postBody = body;
+function UserDefault(){
+	this.userid = setDefault("userid");
+	this.pic = setDefault("pic");
 }
 
-//high-end, non-specific functions - need setDefaults (ACTUALLY that could go into user right?)
-
-function getAndStoreData(input, store){
-	//"methods" which call values
-	this.inputType = input;
-	this.storedDataInput = store;
+var storeInfo = function(source, type){
+	this.source = source;
+	this.type = type;
+	var input = document.getElementById(source).value;
 
 	if(typeof(Storage) !== "undefined"){
-		localStorage.setItem(store, input);
+		localStorage.setItem(type, input);
+		
 	} else {
-		document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support...";
+		document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support";
 	}
-}
+};
 
-function showData(output, store){
-	this.outputType = output;
-	this.storedDataOutput = store;
+var returnInfo = function(source, type){
+	this.type = type;
+	this.source = source;
+	var outputArray = document.getElementsByClassName(source);
+	var myData = localStorage.getItem(type);
 
-	for(var i = 0; i < output.length; i++){
-		output[i].innerHTML = store;
+	for(var i = 0; i < outputArray.length; i++){
+		outputArray[i] = myData;
 	}
-}
+};
+
+var setDefault = function(type){
+	this.type = type;
+	switch(type){
+		case "userid":
+			return "Guest";
+		case "pic":
+			return "http://blog.algonquinstudios.com/wp-content/uploads/2014/04/anonymous.gif";
+	}
+};
+
+UserDefault.prototype = new User();
+var myUserDefault = new UserDefault();
+console.log(myUserDefault.userid);
+
+
 /*
+window.onload = showUsername;
+window.onload = showPicture;
+
 function getUsername(){
 	var input1 = document.getElementById("nameInput").value;
 	if(typeof(Storage) !== "undefined"){
@@ -110,18 +115,4 @@ function getReview(){
 	} else {
 		document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support..."
 	}
-}
-
-function createReview(){
-
-	var guest3 = "test description";
-	var otptB = document.getElementById("userB");
-	var otptH = document.getElementById("userH");
-	var otptP = document.getElementById("userP");
-	var userDesc = localStorage.getItem("description");
-
-	if(userDesc == null){
-		userDesc = guest3;
-	}
-	
 }*/

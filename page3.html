@@ -108,7 +108,7 @@
 				Current Username: <div class="result"></div>
 				<form onsubmit="window.location.reload();" />
 					<input type="text" id="nameInput" maxlength="10" />
-					<input type="submit" onclick="getUsername();" />
+					<input type="submit" onclick="storeInfo('nameInput',userid);" />
 				</form>
 
 				<hr>
@@ -116,7 +116,7 @@
 				<h3>&emsp;Set Picture URL</h3>
 				<form onsubmit="window.location.reload();" />
 					<input type="text" id="picInput"/>
-					<input type="submit" onclick="getPicture();" />
+					<input type="submit" onclick="storeInfo('picInput',pic);" />
 				</form>
 				Current Picture: <img class="myImg" alt="idk" height="100" width="100">
 
