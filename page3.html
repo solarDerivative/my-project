@@ -35,7 +35,7 @@
 					    </ul>
 					    <ul class="nav navbar-nav test">
 					    	<li><div class="vertical-line"></li>
-							<li><a><span id="welcome"></span> <span class="result"></span> <img class="myImg bbyCircle" alt="idk" height="24" width="24"></a></li>
+							<li><a><span id="welcome"></span> <span class="nameOutput"></span> <img class="picOutput bbyCircle" alt="idk" height="24" width="24"></a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
@@ -105,10 +105,10 @@
 			
 			<div class="panel genpanel">
 				<h3>&emsp;Set Username</h3>
-				Current Username: <div class="result"></div>
+				Current Username: <div class="nameOutput"></div>
 				<form onsubmit="window.location.reload();" />
 					<input type="text" id="nameInput" maxlength="10" />
-					<input type="submit" onclick="storeInfo('nameInput',userid);" />
+					<input type="submit" id="nameButton" />
 				</form>
 
 				<hr>
@@ -116,9 +116,9 @@
 				<h3>&emsp;Set Picture URL</h3>
 				<form onsubmit="window.location.reload();" />
 					<input type="text" id="picInput"/>
-					<input type="submit" onclick="storeInfo('picInput',pic);" />
+					<input type="submit" id="picButton" />
 				</form>
-				Current Picture: <img class="myImg" alt="idk" height="100" width="100">
+				Current Picture: <img class="picOutput" alt="idk" height="100" width="100">
 
 				<hr>
 
