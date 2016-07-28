@@ -136,6 +136,12 @@ h4{
 	padding:10px 0 10px 0;
 }
 
+@media (min-width: 768px){
+	.navbar-collapse.collapse{
+		height:50px!important;
+	}
+}
+
 @media (max-width: 767px){
 	.navbar-custom .navbar-nav .open .dropdown-menu > li > a{
 		color: #eceff1;
@@ -370,6 +376,7 @@ li.edit input{
 }
 
 .navbar-nav.test{
+	background-color:initial;
 	float:right;
 	padding-left:0;
 	margin-bottom:0;

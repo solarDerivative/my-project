@@ -18,12 +18,14 @@ TODO
 window.onload = displayRand();
 
 function displayRand(){
+	//contElems is a NodeList object
 	var contElems = document.getElementsByClassName("revpanel");
+	//converting NodeList into an Array
 	var contentArray = Array.prototype.slice.call( contElems, 0);
-
+	console.log(contentArray);
 	var revPanels = document.querySelector(".revPanels");
 	console.log(revPanels);
-
+	//randomizes order of posts before displaying
 	for(var i = revPanels.children.length; i >= 0; i--){
 		revPanels.appendChild(revPanels.children[Math.random()*i | 0]);
 	}

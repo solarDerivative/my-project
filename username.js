@@ -6,15 +6,19 @@ function InfoHandler(type, button, inputfield, outputfields, ref){
 	this.ref = ref;
 
 	this.saveInfo = function saveInfo(){
-  	var input = inputfield.value;
+  		var input = inputfield.value;
    		if(typeof(Storage) !== "undefined"){
         	localStorage.setItem(ref, input);
     	} else {
       		document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support";
     	}
 	};
-	this.button.addEventListener("click", this.saveInfo);
-	//TODO: consolidate switch-using methods
+			
+	if(button){
+		button.addEventListener("click", this.saveInfo);
+	}
+
+	//TODO: consolidate switch-using methods?
 	this.returnInfo = function returnInfo(){
 		var isDefault = this.useGeneric();
 		var input2 = localStorage.getItem(ref);
@@ -24,6 +28,9 @@ function InfoHandler(type, button, inputfield, outputfields, ref){
 		for(var i = 0; i < outputfields.length; i++){
 			switch(type){
 				case "userName":
+					outputfields[i].innerHTML = input2;
+					break;
+				case "userDesc":
 					outputfields[i].innerHTML = input2;
 					break;
 				case "userPic":
@@ -38,8 +45,73 @@ function InfoHandler(type, button, inputfield, outputfields, ref){
 			return "Guest";
 		case "userPic":
 			return "http://blog.algonquinstudios.com/wp-content/uploads/2014/04/anonymous.gif";
+		case "userDesc":
+			return "Test Description";
 		}
 	};
+}
+
+function Writer(button) {
+	var nameCurrent = localStorage.getItem("name1");
+   	var picCurrent = localStorage.getItem("pic1");
+    var descCurrent = localStorage.getItem("desc1");
+	var storeArray = [];
+	
+
+	this.button = button;
+
+	this.setLocalCount = function setLocalCount(){
+		var check = localStorage.getItem("count");
+		var check2 = localStorage.getItem("finalarray");
+		if(check === null){
+			localStorage.setItem("count", 0);
+		}
+		if(check2 === null){
+			localStorage.setItem("finalarray", "temp");
+		}
+		console.log(localStorage.getItem("count"));
+	};
+	var counter = parseInt(localStorage.getItem("count"));
+		console.log(counter);
+
+
+  
+	/*this.getCurrent = function getCurrent(){
+    	var arrayCurrent = [nameCurrent, picCurrent, descCurrent];
+    		console.log(arrayCurrent);
+    		console.log(counter);
+    	storeArray = arrayCurrent;
+    	localStorage.setItem("postarray", JSON.stringify(storeArray));
+    		console.log(storeArray);
+    	var raiseCount = function raiseCount(){
+    		if(typeof(Storage) !== "undefined"){
+    			if(localStorage.count){
+    				console.log(localStorage.count);
+        			localStorage.count = Number(localStorage.count) + 1;
+      			} else {
+        			document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support";
+   				}
+   			}
+   		console.log(localStorage.count);
+		};
+		raiseCount();
+		console.log("/////");
+		prompt("look");
+		window.location.reload();
+	};
+
+	var totalArray = [];
+	totalArray = JSON.parse(localStorage.getItem("finalarray"));
+	console.log(counter);
+	console.log(totalArray);
+	totalArray[counter] = storedArray;
+	console.log(totalArray);
+	localStorage.setItem("finalarray", JSON.stringify(totalArray));
+	window.onload = console.log(totalArray);*/
+
+	if(button){
+    	button.addEventListener("click", this.getCurrent);
+	}
 }
 
 var butN = document.getElementById("nameButton");
@@ -48,12 +120,37 @@ var oupN = document.getElementsByClassName("nameOutput");
 var butP = document.getElementById("picButton");
 var inpP = document.getElementById("picInput");
 var oupP = document.getElementsByClassName("picOutput");
+var butD = document.getElementById("descButton");
+var inpD = document.getElementById("descInput");
+var oupD = document.getElementsByClassName("descOutput");
+var butW = document.getElementById("writeButton");
+var butC = document.getElementById("clearButton");
+butC.addEventListener("click", clearLocal);
 
 var myNameHandler = new InfoHandler("userName", butN, inpN, oupN, "name1");
 var myPicHandler = new InfoHandler("userPic", butP, inpP, oupP, "pic1");
+var myDescHandler = new InfoHandler("userDesc", butD, inpD, oupD, "desc1");
 
 window.onload = myNameHandler.returnInfo();
 window.onload = myPicHandler.returnInfo();
+window.onload = myDescHandler.returnInfo();
+
+var myWriter = new Writer(butW);
+window.onload = myWriter.setLocalCount();
+
+
+
+
+function clearLocal(){
+	localStorage.clear();
+	myWriter.setLocalCount();
+	alert('localStorage cleared! Username and Profile Picture reset.');
+	location.reload();
+}
+
+////////////////////////////////////////////
+
+
 
 // We want to store input given to us by the user. We want to store a string
 // for a username, a string for an image URL, and a string for a description.
@@ -76,12 +173,10 @@ window.onload = myPicHandler.returnInfo();
 	    	console.log(outputfields);
 	    	console.log(this.outputfields);
 	    	console.log(input);
-	    	console.log(savedval);
-	    	console.log(this.savedval);
 	    	console.log(ref);
 	    	console.log(this.ref);
 	    	console.log("//////");
-	    	*/
+*/
 
 /*function User(userid, pic){
 	this.userid = userid;
