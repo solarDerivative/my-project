@@ -1,8 +1,87 @@
+function InfoHandler(type, button, inputfield, outputfields, ref){
+	this.type = type;
+	this.button = button;
+	this.inputfield = inputfield;
+	this.outputfields = outputfields;
+	this.ref = ref;
+
+	this.saveInfo = function saveInfo(){
+  	var input = inputfield.value;
+   		if(typeof(Storage) !== "undefined"){
+        	localStorage.setItem(ref, input);
+    	} else {
+      		document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support";
+    	}
+	};
+	this.button.addEventListener("click", this.saveInfo);
+	//TODO: consolidate switch-using methods
+	this.returnInfo = function returnInfo(){
+		var isDefault = this.useGeneric();
+		var input2 = localStorage.getItem(ref);
+    	if(input2 == null){
+      		input2 = isDefault;
+		}
+		for(var i = 0; i < outputfields.length; i++){
+			switch(type){
+				case "userName":
+					outputfields[i].innerHTML = input2;
+					break;
+				case "userPic":
+					outputfields[i].src = input2;
+					break;
+			}
+		}
+	};
+	this.useGeneric = function useGeneric(){
+		switch(this.type){
+		case "userName":
+			return "Guest";
+		case "userPic":
+			return "http://blog.algonquinstudios.com/wp-content/uploads/2014/04/anonymous.gif";
+		}
+	};
+}
+
+var butN = document.getElementById("nameButton");
+var inpN = document.getElementById("nameInput");
+var oupN = document.getElementsByClassName("nameOutput");
+var butP = document.getElementById("picButton");
+var inpP = document.getElementById("picInput");
+var oupP = document.getElementsByClassName("picOutput");
+
+var myNameHandler = new InfoHandler("userName", butN, inpN, oupN, "name1");
+var myPicHandler = new InfoHandler("userPic", butP, inpP, oupP, "pic1");
+
+window.onload = myNameHandler.returnInfo();
+window.onload = myPicHandler.returnInfo();
+
 // We want to store input given to us by the user. We want to store a string
 // for a username, a string for an image URL, and a string for a description.
 //
 // We want to spit out these strings onto an html template.
+// localStorage.getItem(x)
+// gets whatever value is stored in localStorage's "x"
+// localStorage.setItem(x, value);
+// stores a value in localStorage's "x"
 
+/*
+	   		DEEEEEEEEEEBBBUUUUUUUUUUGGGGGGGGGGG
+	    	alert("Starting saveInfo()!");
+	    	console.log("Starting saveInfo()!");
+	    	console.log("type: " + type);
+	    	console.log("this.type: " + this.type);
+	    	console.log(button);
+	    	console.log(inputfield);
+	    	console.log(inputfield.value);
+	    	console.log(outputfields);
+	    	console.log(this.outputfields);
+	    	console.log(input);
+	    	console.log(savedval);
+	    	console.log(this.savedval);
+	    	console.log(ref);
+	    	console.log(this.ref);
+	    	console.log("//////");
+	    	*/
 
 /*function User(userid, pic){
 	this.userid = userid;
@@ -13,74 +92,6 @@ function UserDefault(){
 	this.userid = setDefault("userid");
 	this.pic = setDefault("pic");
 }*/
-
-function InfoHandler(type, button, inputfield, outputfields, storedloc){
-	this.type = type;
-	this.button = button;
-	this.inputfield = inputfield;
-	this.outputfields = outputfields;
-	this.storedloc = storedloc;
-	this.saveInfo = function saveInfo(){
-   		if(typeof(Storage) !== "undefined"){
-     		localStorage.this.storedloc = inputfield.value;
-    	} else {
-      		document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support";
-    	}
-    	alert("Finished saveInfo()!");
-    	console.log(type);
-    	console.log(button);
-    	console.log(inputfield);
-    	console.log(inputfield.value);
-    	console.log(outputfields);
-    	console.log(storedloc);
-    	console.log(localStorage.this.storedloc);
-	};
-
-	//TODO: consolidate switch-using methods
-	this.returnInfo = function returnInfo(){
-		alert("Starting returnInfo()!");
-    	console.log(type);
-    	console.log(button);
-    	console.log(inputfield);
-    	console.log(inputfield.value);
-    	console.log(outputfields);
-    	console.log(storedloc);
-    	console.log(localStorage.this.storedloc);
-
-		if(localStorage.this.storedloc === undefined){
-      		localStorage.this.storedloc = this.useGeneric();
-		}
-
-		for(var i = 0; i < outputfields.length; i++){
-			switch(type){
-				case "userName":
-					outputfields[i].innerHTML = localStorage.this.storedloc;
-					break;
-				case "userPic":
-					outputfields[i].src = localStorage.this.storedloc;
-					break;
-			}
-		}
-
-		alert("Finished returnInfo()!");
-    	console.log(type);
-    	console.log(button);
-    	console.log(inputfield);
-    	console.log(inputfield.value);
-    	console.log(outputfields);
-    	console.log(storedloc);
-    	console.log(localStorage.this.storedloc);
-	};
-
-	this.useGeneric = function useGeneric(){
-		alert(this.type);
-		switch(this.type){
-		case "userName":
-			return "Guest";
-		case "userPic":
-			return "http://blog.algonquinstudios.com/wp-content/uploads/2014/04/anonymous.gif";
-		}
-	};
 
 	/*var returnInfo = function returnInfo(source, type){
 	this.type = type;
@@ -98,8 +109,6 @@ function InfoHandler(type, button, inputfield, outputfields, storedloc){
 	}
 };*/
   
-	this.button.addEventListener("click", this.saveInfo);
-  
   	/*this.saveInput = function(){
 		if(typeof(Storage) !== "undefined"){
 			localStorage.setItem(type, input);
@@ -108,7 +117,6 @@ function InfoHandler(type, button, inputfield, outputfields, storedloc){
 			document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support";
 		}
 	};*/
-}
 
 /*function storeInfo(source, type){
 	this.source = source;
@@ -177,17 +185,7 @@ var setDefault = function setDefault(type){
 /*UserDefault.prototype = new User();
 var myUserDefault = new UserDefault();*/
 
-var butN = document.getElementById("nameButton");
-var inpN = document.getElementById("nameInput");
-var oupN = document.getElementsByClassName("nameOutput");
-var butP = document.getElementById("picButton");
-var inpP = document.getElementById("picInput");
-var oupP = document.getElementsByClassName("picOutput");
-var myNameHandler = new InfoHandler("userName", butN, inpN, oupN, "name1");
-var myPicHandler = new InfoHandler("userPic", butP, inpP, oupP, "pic1");
 
-window.onload = myNameHandler.returnInfo();
-window.onload = myPicHandler.returnInfo();
 
 /*
 var nameListener = document.getElementById("nameButton");
