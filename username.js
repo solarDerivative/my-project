@@ -62,21 +62,23 @@ function Writer(button) {
 
 	this.setLocalCount = function setLocalCount(){
 		var check = localStorage.getItem("count");
+		var temp = "temp";
 		var check2 = localStorage.getItem("finalarray");
 		if(check === null){
 			localStorage.setItem("count", 0);
 		}
 		if(check2 === null){
-			localStorage.setItem("finalarray", "temp");
+			localStorage.setItem("finalarray", JSON.stringify(temp));
 		}
 		console.log(localStorage.getItem("count"));
 	};
+	console.log()
 	var counter = parseInt(localStorage.getItem("count"));
 		console.log(counter);
 
 
   
-	/*this.getCurrent = function getCurrent(){
+	this.getCurrent = function getCurrent(){
     	var arrayCurrent = [nameCurrent, picCurrent, descCurrent];
     		console.log(arrayCurrent);
     		console.log(counter);
@@ -104,10 +106,10 @@ function Writer(button) {
 	totalArray = JSON.parse(localStorage.getItem("finalarray"));
 	console.log(counter);
 	console.log(totalArray);
-	totalArray[counter] = storedArray;
+	totalArray[counter] = storeArray;
 	console.log(totalArray);
 	localStorage.setItem("finalarray", JSON.stringify(totalArray));
-	window.onload = console.log(totalArray);*/
+	window.onload = console.log(totalArray);
 
 	if(button){
     	button.addEventListener("click", this.getCurrent);
