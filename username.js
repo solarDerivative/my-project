@@ -51,14 +51,13 @@ function InfoHandler(type, button, inputfield, outputfields, ref){
 	};
 }
 
-function Writer(button) {
+function Writer(button2) {
 	var nameCurrent = localStorage.getItem("name1");
    	var picCurrent = localStorage.getItem("pic1");
     var descCurrent = localStorage.getItem("desc1");
 	var storeArray = [];
-	
 
-	this.button = button;
+	this.button2 = button2;
 
 	this.setLocalCount = function setLocalCount(){
 		var check = localStorage.getItem("count");
@@ -72,12 +71,15 @@ function Writer(button) {
 		}
 		console.log(localStorage.getItem("count"));
 	};
-	console.log()
+
+	if(button2){
+    	button2.addEventListener("click", this.getCurrent);
+	}
+
+	console.log();
 	var counter = parseInt(localStorage.getItem("count"));
 		console.log(counter);
 
-
-  
 	this.getCurrent = function getCurrent(){
     	var arrayCurrent = [nameCurrent, picCurrent, descCurrent];
     		console.log(arrayCurrent);
@@ -101,19 +103,6 @@ function Writer(button) {
 		prompt("look");
 		window.location.reload();
 	};
-
-	var totalArray = [];
-	totalArray = JSON.parse(localStorage.getItem("finalarray"));
-	console.log(counter);
-	console.log(totalArray);
-	totalArray[counter] = storeArray;
-	console.log(totalArray);
-	localStorage.setItem("finalarray", JSON.stringify(totalArray));
-	window.onload = console.log(totalArray);
-
-	if(button){
-    	button.addEventListener("click", this.getCurrent);
-	}
 }
 
 var butN = document.getElementById("nameButton");
@@ -127,7 +116,9 @@ var inpD = document.getElementById("descInput");
 var oupD = document.getElementsByClassName("descOutput");
 var butW = document.getElementById("writeButton");
 var butC = document.getElementById("clearButton");
-butC.addEventListener("click", clearLocal);
+if(butC){
+	butC.addEventListener("click", clearLocal);
+}
 
 var myNameHandler = new InfoHandler("userName", butN, inpN, oupN, "name1");
 var myPicHandler = new InfoHandler("userPic", butP, inpP, oupP, "pic1");
@@ -140,15 +131,14 @@ window.onload = myDescHandler.returnInfo();
 var myWriter = new Writer(butW);
 window.onload = myWriter.setLocalCount();
 
-
-
-
+//this function just *will not* work if placed in the Writer class, not sure why?
 function clearLocal(){
-	localStorage.clear();
-	myWriter.setLocalCount();
-	alert('localStorage cleared! Username and Profile Picture reset.');
-	location.reload();
+		localStorage.clear();
+		myWriter.setLocalCount();
+		alert('localStorage cleared! Username and Profile Picture reset.');
+		location.reload();
 }
+
 
 ////////////////////////////////////////////
 
