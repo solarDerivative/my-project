@@ -32,9 +32,9 @@ tr:nth-child(2) > td:nth-child(2){
 	background: #000000;
 }
 
-.ARGH{
+/*.ARGH{
 	background: #000000 url("http://i.imgur.com/4rmwd6q.png") no-repeat right bottom fixed;
-}
+}*/
 
 h1{
 	font-family: 'Montserrat', sans-serif;
@@ -182,8 +182,9 @@ h4{
 	color:#a9a9ef;
 }
 .myBanner .content > a:hover, .myBanner .content > a:focus{
-	color:#EDA8E6;
+	color:#A6823D;
 	transition-duration:0.2s;
+	text-decoration: none;
 }
 
 .myPanel{
@@ -298,9 +299,10 @@ h4{
 }
 
 .footer{
-	color:#a9a9ef;
+	color:#d7dcf6;
 	font-style:italic;
 	margin-left:3%;
+	opacity: 0.8;
 	padding:0 0 5px 0;
 }
 

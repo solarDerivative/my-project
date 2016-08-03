@@ -1,3 +1,30 @@
+/*
+
+function CountSetter(){
+
+	this.setLocalCount = function setLocalCount(){
+		var check = localStorage.getItem("count");
+		if(check === null){
+			localStorage.setItem("count", 0);
+		}
+		console.log(localStorage.getItem("count"));
+	};
+
+	var raiseCount = function raiseCount(){
+    	if(typeof(Storage) !== "undefined"){
+    		if(localStorage.count){
+    			console.log(localStorage.count);
+        		localStorage.count = Number(localStorage.count) + 1;
+      		} else {
+        		document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support";
+   			}
+   		}
+   		console.log(localStorage.count);
+	};
+}
+
+*/
+
 function InfoHandler(type, button, inputfield, outputfields, ref){
 	this.type = type;
 	this.button = button;
@@ -61,13 +88,8 @@ function Writer(button2) {
 
 	this.setLocalCount = function setLocalCount(){
 		var check = localStorage.getItem("count");
-		var temp = "temp";
-		var check2 = localStorage.getItem("finalarray");
 		if(check === null){
 			localStorage.setItem("count", 0);
-		}
-		if(check2 === null){
-			localStorage.setItem("finalarray", JSON.stringify(temp));
 		}
 		console.log(localStorage.getItem("count"));
 	};
@@ -96,7 +118,7 @@ function Writer(button2) {
         			document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support";
    				}
    			}
-   		console.log(localStorage.count);
+   			console.log(localStorage.count);
 		};
 		raiseCount();
 		console.log("/////");
