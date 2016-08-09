@@ -1,6 +1,5 @@
-/*
 
-function CountSetter(){
+/*function CountSetter(){
 
 	this.setLocalCount = function setLocalCount(){
 		var check = localStorage.getItem("count");
@@ -21,18 +20,20 @@ function CountSetter(){
    		}
    		console.log(localStorage.count);
 	};
-}
+}*/
+//function
 
-*/
-
-function InfoHandler(type, button, inputfield, outputfields, ref){
+function InfoHandler(type, button, inputfield, outputfields){
 	this.type = type;
 	this.button = button;
 	this.inputfield = inputfield;
 	this.outputfields = outputfields;
-	this.ref = ref;
+
+	var ref = this.type + localStorage.getItem("count");
+	console.log(ref);
 
 	this.saveInfo = function saveInfo(){
+		console.log("clicked?!?!");
   		var input = inputfield.value;
    		if(typeof(Storage) !== "undefined"){
         	localStorage.setItem(ref, input);
@@ -49,8 +50,15 @@ function InfoHandler(type, button, inputfield, outputfields, ref){
 	this.returnInfo = function returnInfo(){
 		var isDefault = this.useGeneric();
 		var input2 = localStorage.getItem(ref);
+
+		localStorage.temp = Number(localStorage.count) -1;
+		var prevRef = this.type + localStorage.getItem("temp");
     	if(input2 == null){
-      		input2 = isDefault;
+    		if(Number(localStorage.temp) >= 0){
+    			input2 = localStorage.getItem(prevRef);
+    		} else {
+      			input2 = isDefault;
+      		}
 		}
 		for(var i = 0; i < outputfields.length; i++){
 			switch(type){
@@ -78,7 +86,7 @@ function InfoHandler(type, button, inputfield, outputfields, ref){
 	};
 }
 
-function Writer(button2) {
+/*function Writer(button2) {
 	var nameCurrent = localStorage.getItem("name1");
    	var picCurrent = localStorage.getItem("pic1");
     var descCurrent = localStorage.getItem("desc1");
@@ -86,23 +94,12 @@ function Writer(button2) {
 
 	this.button2 = button2;
 
-	this.setLocalCount = function setLocalCount(){
-		var check = localStorage.getItem("count");
-		if(check === null){
-			localStorage.setItem("count", 0);
-		}
-		console.log(localStorage.getItem("count"));
-	};
-
-	if(button2){
-    	button2.addEventListener("click", this.getCurrent);
-	}
-
 	console.log();
 	var counter = parseInt(localStorage.getItem("count"));
 		console.log(counter);
 
 	this.getCurrent = function getCurrent(){
+		console.log("clicked?");
     	var arrayCurrent = [nameCurrent, picCurrent, descCurrent];
     		console.log(arrayCurrent);
     		console.log(counter);
@@ -122,10 +119,14 @@ function Writer(button2) {
 		};
 		raiseCount();
 		console.log("/////");
-		prompt("look");
+		alert("look");
 		window.location.reload();
 	};
-}
+
+	if(button2){
+    	button2.addEventListener("click", this.getCurrent);
+	}
+}*/
 
 var butN = document.getElementById("nameButton");
 var inpN = document.getElementById("nameInput");
@@ -136,29 +137,58 @@ var oupP = document.getElementsByClassName("picOutput");
 var butD = document.getElementById("descButton");
 var inpD = document.getElementById("descInput");
 var oupD = document.getElementsByClassName("descOutput");
+
 var butW = document.getElementById("writeButton");
+if(butW){
+	butW.addEventListener("click", raiseCount);
+}
+
 var butC = document.getElementById("clearButton");
 if(butC){
 	butC.addEventListener("click", clearLocal);
 }
 
-var myNameHandler = new InfoHandler("userName", butN, inpN, oupN, "name1");
-var myPicHandler = new InfoHandler("userPic", butP, inpP, oupP, "pic1");
-var myDescHandler = new InfoHandler("userDesc", butD, inpD, oupD, "desc1");
+window.onload = setLocalCount();
+var myNameHandler = new InfoHandler("userName", butN, inpN, oupN);
+var myPicHandler = new InfoHandler("userPic", butP, inpP, oupP);
+var myDescHandler = new InfoHandler("userDesc", butD, inpD, oupD);
 
 window.onload = myNameHandler.returnInfo();
 window.onload = myPicHandler.returnInfo();
 window.onload = myDescHandler.returnInfo();
 
-var myWriter = new Writer(butW);
-window.onload = myWriter.setLocalCount();
+//var myWriter = new Writer(butW);
+
 
 //this function just *will not* work if placed in the Writer class, not sure why?
+
+function setLocalCount(){
+	var check = localStorage.getItem("count");
+		if(check === null){
+			localStorage.setItem("count", 0);
+		}
+		console.log(localStorage.getItem("count"));
+}
+
+function raiseCount(){
+    if(typeof(Storage) !== "undefined"){
+    	if(localStorage.count){
+    		console.log(localStorage.count);
+        	localStorage.count = Number(localStorage.count) + 1;
+      	} else {
+        	document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support";
+   		}
+   	}
+  	console.log(localStorage.count);
+  	alert("look");
+	location.reload();
+}
+
 function clearLocal(){
-		localStorage.clear();
-		myWriter.setLocalCount();
-		alert('localStorage cleared! Username and Profile Picture reset.');
-		location.reload();
+	localStorage.clear();
+	setLocalCount();
+	alert('localStorage cleared! Username and Profile Picture reset.');
+	location.reload();
 }
 
 

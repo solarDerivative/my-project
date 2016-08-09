@@ -1,0 +1,77 @@
+HASH MAP
+
+MAP IS LIKE A DATA STRUCTURE
+{KEY:VALUE}
+
+object blah
+blah.snarf = 11;
+blah{
+	snarf: 11
+//  KEY    VALUE
+}
+
+arrays are maps in javascript
+array toot
+toot = [];
+toot[0] = 11;
+toot[1] = 19;
+
+javascript does
+toot{
+	0: 11,
+	1: 19
+}
+toot['poot'] = blah;
+toot{
+	0:11,
+	1:19,
+	poot:blah;
+}
+
+"normal"/linear map
+key:
+	0
+	1
+	2
+	3
+	4
+arrays are linear maps
+
+
+but HASH maps are not linear maps
+key gets sent through a hashing function
+
+hash function takes a number and does something to it
+
+hash function(num){
+	num = num*2;
+	return num;
+}
+
+hash maps provide security, make indexes less predicable than a linear map
+hash maps are also fast because they don't have to be sequentially ordered
+
+
+memory has a hierarchy
+[Program: CPU Register (fastest)
+		 L1 cache
+		 L2 cache
+		 L3 cache]     ALL IN PROCESSOR   ^ Smaller, Faster
+
+		 			   RAM
+
+		 			   HDD/SSD            v Larger, Slower
+
+Constantly accessing the same thing, probably in CPU Register
+
+Heavier stuff like new video game areas, i.e. Skyrim textures, usually gonna be HDD/SSD
+
+Stuff moves across these different zones depending on needs, so when something moves like from L1 to L2, L1 will have a small pointer telling where the computer to look in L2 cache. Kinda
+
+Hash map says "It's not here, but here's where it used to be"
+Hash collisions, when there are duplicates of hash(n)
+Need backup plans to deal with collisions
+
+
+TURING COMPLETENESS
+6 Basic Rules of Computing that are essentially the building blocks of pretty much any computing
