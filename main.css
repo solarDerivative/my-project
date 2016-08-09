@@ -443,3 +443,7 @@ li.edit input{
 	height:6em;
 	width:15em;
 }
+
+.dupePanel{
+	display:block;
+}

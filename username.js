@@ -49,16 +49,30 @@ function InfoHandler(type, button, inputfield, outputfields){
 	//TODO: consolidate switch-using methods?
 	this.returnInfo = function returnInfo(){
 		var isDefault = this.useGeneric();
+		/*console.log("ref: " + ref);
+		console.log("localStorage.getItem(ref): " + localStorage.getItem(ref));
+		console.log("localStorage.ref: " + localStorage.ref);*/
 		var input2 = localStorage.getItem(ref);
+		console.log("input2 of " + this.type + " : " + input2);
 
-		localStorage.temp = Number(localStorage.count) -1;
+		console.log("Number(localStorage.temp): " + Number(localStorage.temp));
 		var prevRef = this.type + localStorage.getItem("temp");
+		console.log("prevRef of " + this.type + " : " + prevRef);
     	if(input2 == null){
     		if(Number(localStorage.temp) >= 0){
+    			console.log("input2 == null && Number(localStorage.temp) was >= 0");
     			input2 = localStorage.getItem(prevRef);
+    			console.log("Therefore, input2 of " + this.type + " has been set to " + input2);
+    			console.log("localStorage.getItem(ref) before setting to input2: " + localStorage.getItem(ref) + " where ref is " + ref);
+    			localStorage.setItem(ref, input2);
+    			console.log("localStorage.getItem(ref) after setting to input2: " + localStorage.getItem(ref) + " where ref is " + ref);
+    			
     		} else {
+    			console.log("input2 == null && Number(localStorage.temp) was NOT >= 0");
       			input2 = isDefault;
       		}
+		} else {
+			console.log("input2 of " + this.type + " was not null");
 		}
 		for(var i = 0; i < outputfields.length; i++){
 			switch(type){
@@ -86,47 +100,7 @@ function InfoHandler(type, button, inputfield, outputfields){
 	};
 }
 
-/*function Writer(button2) {
-	var nameCurrent = localStorage.getItem("name1");
-   	var picCurrent = localStorage.getItem("pic1");
-    var descCurrent = localStorage.getItem("desc1");
-	var storeArray = [];
-
-	this.button2 = button2;
-
-	console.log();
-	var counter = parseInt(localStorage.getItem("count"));
-		console.log(counter);
-
-	this.getCurrent = function getCurrent(){
-		console.log("clicked?");
-    	var arrayCurrent = [nameCurrent, picCurrent, descCurrent];
-    		console.log(arrayCurrent);
-    		console.log(counter);
-    	storeArray = arrayCurrent;
-    	localStorage.setItem("postarray", JSON.stringify(storeArray));
-    		console.log(storeArray);
-    	var raiseCount = function raiseCount(){
-    		if(typeof(Storage) !== "undefined"){
-    			if(localStorage.count){
-    				console.log(localStorage.count);
-        			localStorage.count = Number(localStorage.count) + 1;
-      			} else {
-        			document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support";
-   				}
-   			}
-   			console.log(localStorage.count);
-		};
-		raiseCount();
-		console.log("/////");
-		alert("look");
-		window.location.reload();
-	};
-
-	if(button2){
-    	button2.addEventListener("click", this.getCurrent);
-	}
-}*/
+var genElems = document.querySelector(".dupePanel");
 
 var butN = document.getElementById("nameButton");
 var inpN = document.getElementById("nameInput");
@@ -157,17 +131,19 @@ window.onload = myNameHandler.returnInfo();
 window.onload = myPicHandler.returnInfo();
 window.onload = myDescHandler.returnInfo();
 
-//var myWriter = new Writer(butW);
-
+window.onload = displayRand();
+window.onload = makeDupe();
 
 //this function just *will not* work if placed in the Writer class, not sure why?
 
 function setLocalCount(){
 	var check = localStorage.getItem("count");
-		if(check === null){
-			localStorage.setItem("count", 0);
-		}
-		console.log(localStorage.getItem("count"));
+	localStorage.temp = Number(localStorage.count) -1;
+	if(check === null){
+		localStorage.setItem("count", 0);
+	}
+	console.log("Counter is at: " + localStorage.getItem("count"));
+	console.log("-1 Counter is at: " + localStorage.temp);
 }
 
 function raiseCount(){
@@ -180,7 +156,7 @@ function raiseCount(){
    		}
    	}
   	console.log(localStorage.count);
-  	alert("look");
+  	alert("Count Raised");
 	location.reload();
 }
 
@@ -189,6 +165,41 @@ function clearLocal(){
 	setLocalCount();
 	alert('localStorage cleared! Username and Profile Picture reset.');
 	location.reload();
+}
+
+function makeDupe(){
+	var allPans = document.getElementsByClassName("makePanelTest");
+	console.log(genElems);
+	var dupNode = genElems.cloneNode(true);
+	console.log(dupNode);
+
+	for(var j = 0; j < Number(localStorage.count); j++){
+		allPans.appendChild(dupNode);
+	}
+}
+
+function displayRand(){
+	//contElems is a NodeList object
+	var contElems = document.getElementsByClassName("randPanTest");
+	//converting NodeList into an Array
+	var contentArray = Array.prototype.slice.call( contElems, 0);
+	console.log(contentArray);
+	var randPanels = document.querySelector(".randPanelTest");
+	console.log(randPanels);
+	//randomizes order of posts before displaying
+	for(var i = randPanels.children.length; i >= 0; i--){
+		randPanels.appendChild(randPanels.children[Math.random()*i | 0]);
+	}
+	
+
+	for(var k = 0; k < 3; k++){
+		var rand = Math.floor(Math.random()*contentArray.length);
+		console.log(rand);
+		contentArray[rand].style.display="block";
+		contentArray.splice(rand, 1);
+		console.log(contentArray);
+		
+	}
 }
 
 
@@ -221,6 +232,42 @@ function clearLocal(){
 	    	console.log(this.ref);
 	    	console.log("//////");
 */
+
+/*function Writer() {
+	var nameCurrent = localStorage.getItem("name1");
+   	var picCurrent = localStorage.getItem("pic1");
+    var descCurrent = localStorage.getItem("desc1");
+	var storeArray = [];
+
+	console.log();
+	var counter = parseInt(localStorage.getItem("count"));
+		console.log(counter);
+
+	this.getCurrent = function getCurrent(){
+		console.log("clicked?");
+    	var arrayCurrent = [nameCurrent, picCurrent, descCurrent];
+    		console.log(arrayCurrent);
+    		console.log(counter);
+    	storeArray = arrayCurrent;
+    	localStorage.setItem("postarray", JSON.stringify(storeArray));
+    		console.log(storeArray);
+    	var raiseCount = function raiseCount(){
+    		if(typeof(Storage) !== "undefined"){
+    			if(localStorage.count){
+    				console.log(localStorage.count);
+        			localStorage.count = Number(localStorage.count) + 1;
+      			} else {
+        			document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support";
+   				}
+   			}
+   			console.log(localStorage.count);
+		};
+		raiseCount();
+		console.log("/////");
+		alert("look");
+		window.location.reload();
+	};
+}*/
 
 /*function User(userid, pic){
 	this.userid = userid;
