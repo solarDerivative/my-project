@@ -23,11 +23,12 @@
 }*/
 //function
 
-function InfoHandler(type, button, inputfield, outputfields){
+function InfoHandler(type, button, inputfield, outputfields, outputrandom){
 	this.type = type;
 	this.button = button;
 	this.inputfield = inputfield;
 	this.outputfields = outputfields;
+	this.outputrandom = outputrandom;
 
 	var ref = this.type + localStorage.getItem("count");
 	console.log(ref);
@@ -88,6 +89,34 @@ function InfoHandler(type, button, inputfield, outputfields){
 			}
 		}
 	};
+
+	this.returnRand = function returnRand(){
+		var isDefault = this.useGeneric();
+		var tempRef = this.type + 0;
+		var input3 = localStorage.getItem(tempRef);
+		console.log("input3 of " + this.type + " : " + input3);
+
+		for(var i = 0; i < outputrandom.length; i++){
+			tempRef = this.type + i;
+			if(input3){
+				input3 = localStorage.getItem(tempRef);
+			} else {
+				input3 = isDefault;
+			}
+			switch(type){
+				case "userName":
+					outputrandom[i].innerHTML = input3;
+					break;
+				case "userDesc":
+					outputrandom[i].innerHTML = input3;
+					break;
+				case "userPic":
+					outputrandom[i].src = input3;
+					break;
+			}
+		}
+	};
+
 	this.useGeneric = function useGeneric(){
 		switch(this.type){
 		case "userName":
@@ -112,6 +141,14 @@ var butD = document.getElementById("descButton");
 var inpD = document.getElementById("descInput");
 var oupD = document.getElementsByClassName("descOutput");
 
+// RAND PANEL VARS!!
+
+var oupRandN = document.getElementsByClassName("nameFILLER");
+var oupRandP = document.getElementsByClassName("picFILLER");
+var oupRandD = document.getElementsByClassName("descFILLER");
+
+// end randpanelvars
+
 var butW = document.getElementById("writeButton");
 if(butW){
 	butW.addEventListener("click", raiseCount);
@@ -123,9 +160,9 @@ if(butC){
 }
 
 window.onload = setLocalCount();
-var myNameHandler = new InfoHandler("userName", butN, inpN, oupN);
-var myPicHandler = new InfoHandler("userPic", butP, inpP, oupP);
-var myDescHandler = new InfoHandler("userDesc", butD, inpD, oupD);
+var myNameHandler = new InfoHandler("userName", butN, inpN, oupN, oupRandN);
+var myPicHandler = new InfoHandler("userPic", butP, inpP, oupP, oupRandP);
+var myDescHandler = new InfoHandler("userDesc", butD, inpD, oupD, oupRandD);
 
 window.onload = myNameHandler.returnInfo();
 window.onload = myPicHandler.returnInfo();
@@ -133,6 +170,10 @@ window.onload = myDescHandler.returnInfo();
 
 window.onload = displayRand();
 window.onload = makeDupe();
+
+window.onload = myNameHandler.returnRand();
+window.onload = myPicHandler.returnRand();
+window.onload = myDescHandler.returnRand();
 
 //this function just *will not* work if placed in the Writer class, not sure why?
 
@@ -151,6 +192,7 @@ function raiseCount(){
     	if(localStorage.count){
     		console.log(localStorage.count);
         	localStorage.count = Number(localStorage.count) + 1;
+        	
       	} else {
         	document.getElementsByClassName("result").innerHTML = "Sorry! No Web Storage support";
    		}
@@ -168,13 +210,14 @@ function clearLocal(){
 }
 
 function makeDupe(){
-	var allPans = document.getElementsByClassName("makePanelTest");
+	var allPans = document.querySelector(".makePanelTest");
+	var genElems = document.querySelector(".dupePanel");
 	console.log(genElems);
-	var dupNode = genElems.cloneNode(true);
-	console.log(dupNode);
+	//var dupNode = genElems.cloneNode(true);
+	//console.log(dupNode);
 
 	for(var j = 0; j < Number(localStorage.count); j++){
-		allPans.appendChild(dupNode);
+		allPans.appendChild(genElems.cloneNode(true));
 	}
 }
 
