@@ -78,6 +78,7 @@ function InfoHandler(type, button, inputfield, outputfields, outputrandom){
 		for(var i = 0; i < outputfields.length; i++){
 			switch(type){
 				case "userName":
+					document.getElementById("welcome").innerHTML = "Welcome back,";
 					outputfields[i].innerHTML = input2;
 					break;
 				case "userDesc":
@@ -120,6 +121,7 @@ function InfoHandler(type, button, inputfield, outputfields, outputrandom){
 	this.useGeneric = function useGeneric(){
 		switch(this.type){
 		case "userName":
+			document.getElementById("welcome").innerHTML = "Hey there,";
 			return "Guest";
 		case "userPic":
 			return "http://blog.algonquinstudios.com/wp-content/uploads/2014/04/anonymous.gif";
@@ -129,7 +131,7 @@ function InfoHandler(type, button, inputfield, outputfields, outputrandom){
 	};
 }
 
-var genElems = document.querySelector(".dupePanel");
+//var genElems = document.querySelector(".dupePanel");
 
 var butN = document.getElementById("nameButton");
 var inpN = document.getElementById("nameInput");
@@ -168,8 +170,15 @@ window.onload = myNameHandler.returnInfo();
 window.onload = myPicHandler.returnInfo();
 window.onload = myDescHandler.returnInfo();
 
-window.onload = displayRand();
-window.onload = makeDupe();
+
+if(oupRandD != null){
+	console.log(oupRandD);
+	window.onload = makeDupe();
+	window.onload = displayRand();
+}
+
+
+
 
 window.onload = myNameHandler.returnRand();
 window.onload = myPicHandler.returnRand();
@@ -225,12 +234,16 @@ function displayRand(){
 	//contElems is a NodeList object
 	var contElems = document.getElementsByClassName("randPanTest");
 	//converting NodeList into an Array
-	var contentArray = Array.prototype.slice.call( contElems, 0);
+	var contentArray = Array.prototype.slice.call(contElems);
 	console.log(contentArray);
+	console.log(contentArray.length);
+	contentArray.pop();
+	console.log(contentArray);
+	console.log(contentArray.length);
 	var randPanels = document.querySelector(".randPanelTest");
 	console.log(randPanels);
 	//randomizes order of posts before displaying
-	for(var i = randPanels.children.length; i >= 0; i--){
+	for(var i = randPanels.children.length-1; i >= 0; i--){
 		randPanels.appendChild(randPanels.children[Math.random()*i | 0]);
 	}
 	
