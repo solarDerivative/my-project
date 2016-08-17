@@ -379,7 +379,6 @@ li.edit input{
 }
 
 .navbar-nav.test{
-	background-color:initial;
 	float:right;
 	padding-left:0;
 	margin-bottom:0;
@@ -389,9 +388,9 @@ li.edit input{
 	list-style: none;
 }
 
-.navbar-nav.test > li > a:hover, .navbar-nav.test > li > a:focus{
+/*.navbar-nav.test > li > a:hover, .navbar-nav.test > li > a:focus{
 	background-color:initial;
-}
+}*/
 
 .revgroup{
 	width:80%;

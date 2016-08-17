@@ -14,7 +14,7 @@ TODO
 
 	-for(i = 0; i < 3; i++)
 
-*/
+
 window.onload = displayRand();
 
 function displayRand(){
@@ -32,6 +32,48 @@ function displayRand(){
 	
 
 	for(var i = 0; i < 3; i++){
+		var rand = Math.floor(Math.random()*contentArray.length);
+		console.log(rand);
+		contentArray[rand].style.display="block";
+		contentArray.splice(rand, 1);
+		console.log(contentArray);
+		
+	}
+}*/
+
+window.onload = makeDupe();
+window.onload = displayRand();
+
+function makeDupe(){
+	var allPans = document.querySelector(".makePanelTest");
+	var genElems = document.querySelector(".dupePanel");
+	console.log(genElems);
+
+	for(var j = 0; j < Number(localStorage.count); j++){
+		allPans.appendChild(genElems.cloneNode(true));
+	}
+}
+
+function displayRand(){
+	//contElems is a NodeList object
+	var contElems = document.getElementsByClassName("randPanTest");
+	//converting NodeList into an Array
+	var contentArray = Array.prototype.slice.call(contElems);
+	console.log(contentArray);
+	console.log(contentArray.length);
+	contentArray.pop();
+	console.log(contentArray);
+	console.log(contentArray.length);
+	var randPanels = document.querySelector(".randPanelTest");
+	console.log(randPanels);
+	console.log(contentArray.length);
+	//randomizes order of posts before displaying
+	for(var i = contentArray.length; i >= 0; i--){
+		randPanels.appendChild(randPanels.children[Math.random()*i | 0]);
+	}
+	
+
+	for(var k = 0; k < 3; k++){
 		var rand = Math.floor(Math.random()*contentArray.length);
 		console.log(rand);
 		contentArray[rand].style.display="block";

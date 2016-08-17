@@ -21,7 +21,6 @@
    		console.log(localStorage.count);
 	};
 }*/
-//function
 
 function InfoHandler(type, button, inputfield, outputfields, outputrandom){
 	this.type = type;
@@ -78,7 +77,6 @@ function InfoHandler(type, button, inputfield, outputfields, outputrandom){
 		for(var i = 0; i < outputfields.length; i++){
 			switch(type){
 				case "userName":
-					document.getElementById("welcome").innerHTML = "Welcome back,";
 					outputfields[i].innerHTML = input2;
 					break;
 				case "userDesc":
@@ -121,7 +119,6 @@ function InfoHandler(type, button, inputfield, outputfields, outputrandom){
 	this.useGeneric = function useGeneric(){
 		switch(this.type){
 		case "userName":
-			document.getElementById("welcome").innerHTML = "Hey there,";
 			return "Guest";
 		case "userPic":
 			return "http://blog.algonquinstudios.com/wp-content/uploads/2014/04/anonymous.gif";
@@ -166,31 +163,27 @@ var myNameHandler = new InfoHandler("userName", butN, inpN, oupN, oupRandN);
 var myPicHandler = new InfoHandler("userPic", butP, inpP, oupP, oupRandP);
 var myDescHandler = new InfoHandler("userDesc", butD, inpD, oupD, oupRandD);
 
-window.onload = myNameHandler.returnInfo();
 window.onload = myPicHandler.returnInfo();
 window.onload = myDescHandler.returnInfo();
+window.onload = myNameHandler.returnInfo();
 
+//window.onload = makeDupe();
 
-if(oupRandD != null){
-	console.log(oupRandD);
-	window.onload = makeDupe();
-	window.onload = displayRand();
-}
-
-
-
-
-window.onload = myNameHandler.returnRand();
 window.onload = myPicHandler.returnRand();
 window.onload = myDescHandler.returnRand();
+window.onload = myNameHandler.returnRand();
 
 //this function just *will not* work if placed in the Writer class, not sure why?
 
 function setLocalCount(){
 	var check = localStorage.getItem("count");
+	console.log(check);
 	localStorage.temp = Number(localStorage.count) -1;
-	if(check === null){
+	if(check === null || Number(check) == 0){
+		document.getElementById("welcome").innerHTML = "Hey there,";
 		localStorage.setItem("count", 0);
+	} else {
+		document.getElementById("welcome").innerHTML = "Welcome back,";
 	}
 	console.log("Counter is at: " + localStorage.getItem("count"));
 	console.log("-1 Counter is at: " + localStorage.temp);
@@ -218,7 +211,7 @@ function clearLocal(){
 	location.reload();
 }
 
-function makeDupe(){
+/*function makeDupe(){
 	var allPans = document.querySelector(".makePanelTest");
 	var genElems = document.querySelector(".dupePanel");
 	console.log(genElems);
@@ -228,9 +221,9 @@ function makeDupe(){
 	for(var j = 0; j < Number(localStorage.count); j++){
 		allPans.appendChild(genElems.cloneNode(true));
 	}
-}
+}*/
 
-function displayRand(){
+/*function displayRand(){
 	//contElems is a NodeList object
 	var contElems = document.getElementsByClassName("randPanTest");
 	//converting NodeList into an Array
@@ -256,7 +249,7 @@ function displayRand(){
 		console.log(contentArray);
 		
 	}
-}
+}*/
 
 
 ////////////////////////////////////////////

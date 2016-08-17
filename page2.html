@@ -1,7 +1,7 @@
-<!doctype html>
+<html class>
 <html>
 	<head>
-		<title>Blog &middot Learning Javascript</title>
+		<title>Blog &middot Echochamber</title>
 		
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -21,7 +21,7 @@
 				        	<span class="icon-bar"></span>
 				    	</button>
 				    
-				    	<a class="navbar-brand">My <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Project</a>
+				    	<a class="navbar-brand">Echo <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Chamber</a>
 				    </div>
 
 				    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,16 +35,53 @@
 				    	</ul>
 				    	<ul class="nav navbar-nav test">
 				    		<li><div class="vertical-line"></li>
-							<li><a style="padding-bottom:0px;"><span id="welcome"></span> <span class="nameOutput"></span> <img class="picOutput bbyCircle" alt="idk" height="24" width="24"></a></li>
+							<li><a href="mysettings.html"><span id="welcome"></span> <span class="nameOutput result"></span> <img class="picOutput bbyCircle" alt="idk" height="24" width="24"></a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
 		</header>
 
+		<div class="jumbotron myJumbotron">
+			<div class="container">
+				<h1 class="headingMain" style="line-height: 1.1"><strong>Blog</strong><br><font size="3em">&emsp;&emsp;&emsp;If I Don't Put This Jumbotron Thing Here The Navbar Goes Whack</font></h1>
+			</div>
+		</div>
+
 		<div class="panel-group" id="accordion">
 
 		<div class="myPanel month">
 			August
+		</div>
+
+		<div class="panel myPanel">
+			<div class="heading">
+				<div class="row">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwentyseven"><span class="headFont">
+						<div class="col-xs-9">Echochamber is Complete</div>
+						<div class="col-xs-3 text-right">8/17/16 Notes</div>
+					</span></a>
+				</div>
+			</div>
+			<div id="accordionTwentyseven" class="panel-collapse collapse in">
+				<div class="body">
+					<em><p>&emsp;Last week, I finished the functionality.</p>
+					<p>&emsp;This week, I wrapped up the formatting.</p>
+					<p>&emsp;The code could use some cleaning up, but other than that and maybe some other small improvements, this web project is effectively done!</p></em>
+					<hr>
+					<p><h4>10:00</h4></p>
+					<h3><font color="#C3A771"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span></font> New Page: My Settings</h3>
+					<ul>
+						<li>This page can be accessed by clicking the welcome message on the right side of the navbar</li>
+						<li>Here you can set a Username, Picture, and a Description</li>
+						<li>With these, you can create an Echo which will be added to the total list of Echos stored in your local storage</li>
+						<li>There is a list of all Echos you have saved</li>
+					</ul>
+					<h3>Home</h3>
+					<ul>
+						<li>Will display three Echoes randomly, choosing 3 from a pool of all default Echoes and user-created Echoes</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 
 		<div class="panel myPanel">
@@ -56,7 +93,7 @@
 					</span></a>
 				</div>
 			</div>
-			<div id="accordionTwentysix" class="panel-collapse collapse in">
+			<div id="accordionTwentysix" class="panel-collapse collapse">
 				<div class="body">
 					<p><h3>YEESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS</h3></p>
 				</div>
