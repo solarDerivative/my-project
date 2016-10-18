@@ -1,145 +1,185 @@
-<html class>
+<!doctype html>
 <html>
 	<head>
-		<title>Home &middot Echochamber</title>
-		
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-		<link rel="stylesheet" href="main.css">
-	</head>
-	<body class="HOME">
-		<header class="navbar-custom" role="banner">
-				<nav class="WHAT" role="navigation">
-				    <!-- Brand and toggle get grouped for better mobile display -->
-				    <div class="navbar-header">
-				      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				       		<span class="sr-only">Toggle navigation</span>
-				    		<span class="icon-bar"></span>
-				    		<span class="icon-bar"></span>
-				    		<span class="icon-bar"></span>
-				    	</button>
-				    
-				    	<a class="navbar-brand">Echo <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Chamber</a>
-				    </div>
+	<title>Angular Test 1</title>
 
-				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				    	<ul class="nav navbar-nav">
-				    		<li><div class="vertical-line"></li>
-					        <li class="active"><a href="index.html">HOME <span class="sr-only">(current)</span></a></li>
-					        <li><a href="page2.html">BLOG</a></li>
-					        <li><a href="page3.html">SANDBOX</a></li>
-					        <li><a href="https://github.com/solarDerivative/my-project">GITHUB</a></li>
-				    	</ul>
-				    	<ul class="nav navbar-nav test">
-				    		<li><div class="vertical-line"></li>
-							<li><a href="mysettings.html"><span id="welcome"></span> <span class="nameOutput result"></span> <img class="picOutput bbyCircle" alt="idk" height="24" width="24"></a></li>
-						</ul>
-					</div><!-- /.navbar-collapse -->
-				</nav>
-		</header>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<link rel="stylesheet" href="css/main.css">
 		
-		<div class="jumbotron myJumbotron">
-		<div class="container">
-			<h1 class="headingMain"><strong><font size="2em">Welcome to the</font><br>&emsp;ECHO CHAMBER</strong></h1>
+	</head>
+	<body ng-app="colorApp">
+		<div ng-controller="titleCtrl">
+			<h1>{{title}}</h1>
 		</div>
-			<p>
-				<div class="bottomAligned">
-					<div class="myBanner" role="banner">
-						<div class="container content">
-							<font size="2" color="#C3A771"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span></font> <strong>Latest Post:</strong> <a href="page2.html">8/17/16 Update Notes: Echochamber is Complete >></a></div>
+
+		<!--
+		<div class="colorpicker" ng-controller="colorCtrl">
+			<div><h3>Values</h3>
+				<strong>Red Value:</strong> <input ng-model="inner.red">
+				<p>&nbsp;{{inner.red}}</p>
+				<strong>Green Value:</strong> <input ng-model="inner.green">
+				<p>&nbsp;{{inner.green}}</p>
+				<strong>Blue Value:</strong> <input ng-model="inner.blue">
+				<p>&nbsp;{{inner.blue}}</p>
+			</div>
+			<br>
+			<div><h3>Outer Values</h3>
+				<strong>Red Value:</strong> <input ng-model="outer.red">
+				<p>&nbsp;{{outer.red}}</p>
+				<strong>Green Value:</strong> <input ng-model="outer.green">
+				<p>&nbsp;{{outer.green}}</p>
+				<strong>Blue Value:</strong> <input ng-model="outer.blue">
+				<p>&nbsp;{{outer.blue}}</p>
+			</div>
+			<br>
+			<div id="square" style="background:rgb({{inner.red}},{{inner.green}},{{inner.blue}}); border: 10px solid rgb({{outer.red}},{{outer.green}},{{outer.blue}});"></div>
+
+		</div>
+		<p>
+		<hr>
+		<p>
+		-->
+		<span ng-controller="charCtrl">
+		<span ng-controller="canvCtrl">
+			<div class="wrapper">
+			<div class="idk">
+			<canvas id="canvas" ng-click="colorClick()" ng-mousemove="colorPick()"></canvas></div>
+				<div class="colorMenu">
+					<strong>Active Color</strong>
+					<div id="color" class="colorBox"></div>
+					<strong>Selected Color</strong>
+					<div id="color2" class="colorBox"></div>
+					<strong>User-Defined Color</strong>
+					<div id="color3" class="colorBox" style="background-color:rgba({{rgbVals.r}}, {{rgbVals.g}}, {{rgbVals.b}}, 255); color:{{setTextColor(rgbVals.r, rgbVals.g, rgbVals.b)}}">rgba({{rgbVals.r}}, {{rgbVals.g}}, {{rgbVals.b}}, 255)<br>hsl({{hslVals.h}}, {{hslVals.s}}, {{hslVals.l}})<br>hsv({{hsvVals.hh}}, {{hsvVals.ss}}, {{hsvVals.vv}})<br>{{hexVals}}</div>
+						<div id="userVals"></div>
+						
+						<input type=checkbox ng-model=collapse></input>
+						<div style="color:black" ng-show=collapse>
+							<!--<p><strong>Red:</strong> <input ng-model="rgbVals.r" ng-change="replaceColor(colorA, colorB)" maxlength="3">
+							<strong>Green:</strong> <input ng-model="rgbVals.g" ng-change="replaceColor(colorA, colorB)" maxlength="3">
+							<strong>Blue:</strong> <input ng-model="rgbVals.b" ng-change="replaceColor(colorA, colorB)" maxlength="3"></p> -->
+							<div class="row colourSlider">
+								<div class="column">
+									<br>
+									R:
+									<input ng-model="rgbVals.r" type="range" id="r" min="0" max="255" ng-change="setColorFromRgb()">
+
+									<br>
+									G:
+									<input ng-model="rgbVals.g" type="range" id="g" min="0" max="255" ng-change="setColorFromRgb()">
+
+									<br>
+									B:
+									<input ng-model="rgbVals.b" type="range" id="b" min="0" max="255" ng-change="setColorFromRgb()">
+								</div>
+
+								<div class="column">
+									<br>
+									
+									<br>
+									<input ng-model="rgbVals.r" ng-change="setColorFromRgb()" maxlength="3">
+
+									<br>
+									
+									<br>
+									<input ng-model="rgbVals.g" ng-change="setColorFromRgb()" maxlength="3">
+
+									<br>
+									
+									<br>
+									<input ng-model="rgbVals.b" ng-change="setColorFromRgb()" maxlength="3">
+								</div>
+
+								<div class="column">
+									<br>
+									H:
+									<input ng-model="hslVals.h" type="range" id="h" min="0" max="360" ng-disabled="true">
+
+									<br>
+									S:
+									<input ng-model="hslVals.s" type="range" id="s" min="0" max="100" ng-disabled="true">
+
+									<br>
+									L:
+									<input ng-model="hslVals.l" type="range" id="l" min="0" max="100" ng-disabled="true">
+								</div>
+
+								<div class="column">
+									<br>
+									
+									<br>
+									<input ng-model="hslVals.h" ng-disabled="true" maxlength="3">&nbsp;<input ng-model="hsvVals.hh" ng-disabled="true">
+
+									<br>
+									
+									<br>
+									<input ng-model="hslVals.s" ng-disabled="true" maxlength="3">&nbsp;<input ng-model="hsvVals.ss" ng-disabled="true">
+
+									<br>
+									
+									<br>
+									<input ng-model="hslVals.l" ng-disabled="true" maxlength="3">&nbsp;<input ng-model="hsvVals.vv" ng-disabled="true">
+								</div>
+
+								<!--
+								<div class="column">
+									H:
+									<input type="range" id="h" min="0" max="360" oninput="setColorFromHsl()">
+									<br>
+									S:
+									<input type="range" id="s" min="0" max="100" oninput="setColorFromHsl()">
+									<br>
+									L:
+									<input type="range" id="l" min="0" max="100" oninput="setColorFromHsl()">
+								</div>
+								-->
+							</div>
+
+						</div>
 					</div>
 				</div>
-			</p>
-		</div> <!-- End of Jumbotron -->
-
-		<div class="container">
-			<ul class="revPanels randPanelTest makePanelTest">
-				<li class="panel revpanel randPanTest">
-					<div class="media">
-			  			<div class="media-left">
-			      			<img class="media-object img-circle" src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAApAAAAJDZlODlmMjMwLTA0ZmEtNDFiMy1iN2I3LWE1M2Y1ZTRjOGE3OA.jpg" alt="Where's the beef?">
-			  			</div>
-			  			<div class="media-body">
-			  			<h4 class="media-heading">Todd</h4>
-			    			<em>Wow, great! Helped a ton, thanks!</em>
-			  			</div>
-					</div>
-				</li>
-				<li class="panel revpanel randPanTest">
-					<div class="media">
-			  			<div class="media-left">
-			      			<img class="media-object img-circle" src="http://www.iamalwayswithyou.com/wp-content/uploads/2015/10/dinosaur_stock___14_by_nigav_stock-d68h3eh.png" alt="??">
-			  			</div>
-			  			<div class="media-body">
-			  			<h4 class="media-heading">Ferdinand</h4>
-			    			<em>Don't ever talk to me, or my son, again</em>
-			  			</div>
-					</div>
-				</li>
-				<li class="panel revpanel randPanTest">
-					<div class="media">
-			  			<div class="media-left">
-			      			<img class="media-object img-circle" src="http://i.imgur.com/I8r3KZC.png" alt="big meaty claws">
-			  			</div>
-			  			<div class="media-body">
-			  			<h4 class="media-heading">Ryoma</h4>
-			    			<em>YOU HAVE BREATHED YOUR LAST!</em>
-			  			</div>
-					</div>
-				</li>
-				<li class="panel revpanel randPanTest">
-					<div class="media">
-			  			<div class="media-left">
-			      			<img class="media-object img-circle" src="http://i.imgur.com/PvdWinC.png" alt="medium meaty claws">
-			  			</div>
-			  			<div class="media-body">
-			  			<h4 class="media-heading">Breathing My Last</h4>
-			    			<em>Great Barrier Reef, he was right</em>
-			  			</div>
-					</div>
-				</li>
-				<li class="panel revpanel randPanTest">
-					<div class="media">
-			  			<div class="media-left">
-			      			<img class="media-object img-circle" src="http://i.imgur.com/j74ckXK.gif" alt="intense">
-			  			</div>
-			  			<div class="media-body">
-			  			<h4 class="media-heading">Moon Moon</h4>
-			    			<em>woof</em>
-			  			</div>
-					</div>
-				</li>
-			
-				<li class="panel revpanel dupePanel randPanTest">
-					<div class="media">
-			  			<div class="media-left">
-			      			<img class="picFILLER img-circle" alt="something">
-			  			</div>
-			  			<div class="media-body">
-			  			<h4 class="media-heading"><span class="nameFILLER"></span></h4>
-			    			<em class="descFILLER"></em>
-			  			</div>
-					</div>
-				</li>
-			</ul>
-
-		<footer>
-			<hr>
-			<div class="footer">
-				<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>  2016 pls no stealing my imaginary website <br> Best viewed/Most likely to function in the latest version of Google Chrome or Mozilla Firefox
+				
 			</div>
-		</footer>
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-	<script src="randcontent.js"></script>
-	<script src="username.js"></script>
+			<div class="why">
+				<button ng-click="replaceColor(colorA, colorB)">Replace Selected with User-Defined</button>
+			</div>
 	
+		<!-- <button ng-click="pushVals()">Push Values</button>&nbsp; -->
+		<select ng-model="selectedChar" ng-options="image.name for image in images"></select>
+		<button ng-click="drawTest(selectedChar.id)">Draw {{selectedChar.name}}</button>&nbsp;
+		<button ng-click="clear()">Clear</button>&nbsp;
+
+		<span ng-controller="dragCtrl">
+			<div id="colorTotal">
+				<div id="colorMsg"></div>
+
+				<div class="notTable">
+					<span ng-repeat="color in allrgbVals | orderBy : parseInt">
+						<my-draggable>rgba {{color}}</my-draggable>
+					</span>
+				</div>
+			</div>
+
+		<my-droppable></my-droppable>
+
+		</span> <!-- end of dragdrop controller -->
+
+		</span> <!-- end of canvas controller -->
+
+		</span> <!-- end of character controller -->
+
+		<!-- Modules -->
+		<script src="scripts/main.js"></script>
+
+		<!-- Directives -->
+		<script src="scripts/directives/draggable.js"></script>
+		<script src="scripts/directives/droppable.js"></script>
+    	<!-- Controllers -->
+    	<script src="scripts/controllers/FirstController.js"></script>
+    	<script src="scripts/controllers/colorCtrl.js"></script>
+    	<script src="scripts/controllers/charCtrl.js"></script>
+    	<script src="scripts/controllers/canvCtrl.js"></script>
+    	<script src="scripts/controllers/dragCtrl.js"></script>
 	</body>
 </html>
