@@ -1,7 +1,7 @@
-<!doctype html>
+<html class>
 <html>
 	<head>
-		<title>Home &middot Learning Javascript</title>
+		<title>Home &middot Echochamber</title>
 		
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -21,7 +21,7 @@
 				    		<span class="icon-bar"></span>
 				    	</button>
 				    
-				    	<a class="navbar-brand">My <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Project</a>
+				    	<a class="navbar-brand">Echo <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Chamber</a>
 				    </div>
 
 				    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,7 +35,7 @@
 				    	</ul>
 				    	<ul class="nav navbar-nav test">
 				    		<li><div class="vertical-line"></li>
-							<li><a><span id="welcome"></span> <span class="result"></span> <img class="myImg bbyCircle" alt="idk" height="24" width="24"></a></li>
+							<li><a href="mysettings.html"><span id="welcome"></span> <span class="nameOutput result"></span> <img class="picOutput bbyCircle" alt="idk" height="24" width="24"></a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
@@ -49,76 +49,87 @@
 				<div class="bottomAligned">
 					<div class="myBanner" role="banner">
 						<div class="container content">
-							<font size="2" color="#C3A771"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span></font> <strong>Latest Post:</strong> <a href="page2.html">7/24/16 Update Notes: More To Do >></a></div>
+							<font size="2" color="#C3A771"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span></font> <strong>Latest Post:</strong> <a href="page2.html">5/31/17 Update Notes: Hello World >></a></div>
 					</div>
 				</div>
 			</p>
 		</div> <!-- End of Jumbotron -->
 
 		<div class="container">
-			<ul class="revPanels">
-			<li class="panel revpanel">
-				<div class="media">
-		  			<div class="media-left">
-		      			<img class="media-object img-circle" src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAApAAAAJDZlODlmMjMwLTA0ZmEtNDFiMy1iN2I3LWE1M2Y1ZTRjOGE3OA.jpg" alt="Where's the beef?">
-		  			</div>
-		  			<div class="media-body">
-		  			<h4 class="media-heading">Todd</h4>
-		    			<em>Wow, great! Helped a ton, thanks!</em>
-		  			</div>
-				</div>
-			</li>
-			<li class="panel revpanel">
-				<div class="media">
-		  			<div class="media-left">
-		      			<img class="media-object img-circle" src="http://www.iamalwayswithyou.com/wp-content/uploads/2015/10/dinosaur_stock___14_by_nigav_stock-d68h3eh.png" alt="??">
-		  			</div>
-		  			<div class="media-body">
-		  			<h4 class="media-heading">Ferdinand</h4>
-		    			<em>Don't ever talk to me, or my son, again</em>
-		  			</div>
-				</div>
-			</li>
-			<li class="panel revpanel">
-				<div class="media">
-		  			<div class="media-left">
-		      			<img class="media-object img-circle" src="http://i.imgur.com/I8r3KZC.png" alt="big meaty claws">
-		  			</div>
-		  			<div class="media-body">
-		  			<h4 class="media-heading">Ryoma</h4>
-		    			<em>YOU HAVE BREATHED YOUR LAST!</em>
-		  			</div>
-				</div>
-			</li>
-			<li class="panel revpanel">
-				<div class="media">
-		  			<div class="media-left">
-		      			<img class="media-object img-circle" src="http://i.imgur.com/PvdWinC.png" alt="medium meaty claws">
-		  			</div>
-		  			<div class="media-body">
-		  			<h4 class="media-heading">Breathing My Last</h4>
-		    			<em>Great Barrier Reef, he was right</em>
-		  			</div>
-				</div>
-			</li>
-			<li class="panel revpanel">
-				<div class="media">
-		  			<div class="media-left">
-		      			<img class="media-object img-circle" src="http://i.imgur.com/j74ckXK.gif" alt="intense">
-		  			</div>
-		  			<div class="media-body">
-		  			<h4 class="media-heading">Moon Moon</h4>
-		    			<em>woof</em>
-		  			</div>
-				</div>
-			</li>
+			<ul class="revPanels randPanelTest makePanelTest">
+				<li class="panel revpanel randPanTest">
+					<div class="media">
+			  			<div class="media-left">
+			      			<img class="media-object img-circle" src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAApAAAAJDZlODlmMjMwLTA0ZmEtNDFiMy1iN2I3LWE1M2Y1ZTRjOGE3OA.jpg" alt="Where's the beef?">
+			  			</div>
+			  			<div class="media-body">
+			  			<h4 class="media-heading">Todd</h4>
+			    			<em>Wow, great! Helped a ton, thanks!</em>
+			  			</div>
+					</div>
+				</li>
+				<li class="panel revpanel randPanTest">
+					<div class="media">
+			  			<div class="media-left">
+			      			<img class="media-object img-circle" src="http://www.iamalwayswithyou.com/wp-content/uploads/2015/10/dinosaur_stock___14_by_nigav_stock-d68h3eh.png" alt="??">
+			  			</div>
+			  			<div class="media-body">
+			  			<h4 class="media-heading">Ferdinand</h4>
+			    			<em>Don't ever talk to me, or my son, again</em>
+			  			</div>
+					</div>
+				</li>
+				<li class="panel revpanel randPanTest">
+					<div class="media">
+			  			<div class="media-left">
+			      			<img class="media-object img-circle" src="http://i.imgur.com/I8r3KZC.png" alt="big meaty claws">
+			  			</div>
+			  			<div class="media-body">
+			  			<h4 class="media-heading">Ryoma</h4>
+			    			<em>YOU HAVE BREATHED YOUR LAST!</em>
+			  			</div>
+					</div>
+				</li>
+				<li class="panel revpanel randPanTest">
+					<div class="media">
+			  			<div class="media-left">
+			      			<img class="media-object img-circle" src="http://i.imgur.com/PvdWinC.png" alt="medium meaty claws">
+			  			</div>
+			  			<div class="media-body">
+			  			<h4 class="media-heading">Breathing My Last</h4>
+			    			<em>Great Barrier Reef, he was right</em>
+			  			</div>
+					</div>
+				</li>
+				<li class="panel revpanel randPanTest">
+					<div class="media">
+			  			<div class="media-left">
+			      			<img class="media-object img-circle" src="http://i.imgur.com/j74ckXK.gif" alt="intense">
+			  			</div>
+			  			<div class="media-body">
+			  			<h4 class="media-heading">Moon Moon</h4>
+			    			<em>woof</em>
+			  			</div>
+					</div>
+				</li>
+			
+				<li class="panel revpanel dupePanel randPanTest">
+					<div class="media">
+			  			<div class="media-left">
+			      			<img class="picFILLER img-circle" alt="something">
+			  			</div>
+			  			<div class="media-body">
+			  			<h4 class="media-heading"><span class="nameFILLER"></span></h4>
+			    			<em class="descFILLER"></em>
+			  			</div>
+					</div>
+				</li>
 			</ul>
-		</div>
 
 		<footer>
 			<hr>
 			<div class="footer">
-				<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>  2016 pls no stealing my imaginary website <br> Best viewed/Most likely to function in the latest version of Google Chrome or Mozilla Firefox
+				<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> David Campbell 2017 pls no stealing my imaginary website <br> Best viewed/Most likely to function in the latest version of Google Chrome or Mozilla Firefox
 			</div>
 		</footer>
 
@@ -127,7 +138,8 @@
     <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-	<script src="username.js"></script>
 	<script src="randcontent.js"></script>
+	<script src="username.js"></script>
+	
 	</body>
 </html>

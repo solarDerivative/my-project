@@ -1,7 +1,7 @@
-<!doctype html>
+<html class>
 <html>
 	<head>
-		<title>Blog &middot Learning Javascript</title>
+		<title>Blog &middot Echochamber</title>
 		
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 		<link rel="stylesheet" href="main.css">
 	</head>
-	<body class="ARGH">
+	<body class="HOME">
 		<header class="navbar-custom" role="banner">
 				<nav class="WHAT" role="navigation">
 				    <!-- Brand and toggle get grouped for better mobile display -->
@@ -21,7 +21,7 @@
 				        	<span class="icon-bar"></span>
 				    	</button>
 				    
-				    	<a class="navbar-brand">My <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Project</a>
+				    	<a class="navbar-brand">Echo <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Chamber</a>
 				    </div>
 
 				    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,13 +35,167 @@
 				    	</ul>
 				    	<ul class="nav navbar-nav test">
 				    		<li><div class="vertical-line"></li>
-							<li><a class="WHAT2"><span id="welcome"></span> <span class="result"></span> <img class="myImg bbyCircle" alt="idk" height="24" width="24"></a></li>
+							<li><a href="mysettings.html"><span id="welcome"></span> <span class="nameOutput result"></span> <img class="picOutput bbyCircle" alt="idk" height="24" width="24"></a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
 		</header>
 
+		<div class="jumbotron myJumbotron">
+			<div class="container">
+				<h1 class="headingMain" style="line-height: 1.1"><strong>Blog</strong><br><font size="3em">&emsp;&emsp;&emsp;If I Don't Put This Jumbotron Thing Here The Navbar Goes Whack</font></h1>
+			</div>
+		</div>
+
 		<div class="panel-group" id="accordion">
+
+		<div class="myPanel month">
+			May 2017
+		</div>
+
+		<div class="panel myPanel">
+			<div class="heading">
+				<div class="row">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwentyeight"><span class="headFont">
+						<div class="col-xs-9">Hello World</div>
+						<div class="col-xs-3 text-right">5/31/17 Notes</div>
+					</span></a>
+				</div>
+			</div>
+			<div id="accordionTwentyeight" class="panel-collapse collapse in">
+				<div class="body">
+					<em><p>&emsp;I, uh, didn't plan the timing.</p>
+					<p>&emsp;The first entry happened on June 1st, 2016. Today is May 31st, 2017.</p>
+					<br>
+					<p>&emsp;... Weird!</p></em>
+					<hr>
+					<p><h4>22:30</h4></p>
+					<h3><font color="#C3A771"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span></font> Actual Website</h3>
+					<ul>
+						<li><a href="http://echochambers.xyz/index.html">http://echochambers.xyz/index.html</a></li>
+						<li>Website. Online. Wow!</li>
+						<li>As of writing this the website itself doesn't appear to work yet but the preview thing does. Should be good tomorrow probably?</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="myPanel month">
+			August
+		</div>
+
+		<div class="panel myPanel">
+			<div class="heading">
+				<div class="row">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwentyseven"><span class="headFont">
+						<div class="col-xs-9">Echochamber is Complete</div>
+						<div class="col-xs-3 text-right">8/17/16 Notes</div>
+					</span></a>
+				</div>
+			</div>
+			<div id="accordionTwentyseven" class="panel-collapse collapse">
+				<div class="body">
+					<em><p>&emsp;Last week, I finished the functionality.</p>
+					<p>&emsp;This week, I wrapped up the formatting.</p>
+					<p>&emsp;The code could use some cleaning up, but other than that and maybe some other small improvements, this web project is effectively done!</p></em>
+					<hr>
+					<p><h4>10:00</h4></p>
+					<h3><font color="#C3A771"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span></font> New Page: My Settings</h3>
+					<ul>
+						<li>This page can be accessed by clicking the welcome message on the right side of the navbar</li>
+						<li>Here you can set a Username, Picture, and a Description</li>
+						<li>With these, you can create an Echo which will be added to the total list of Echoes stored in your local storage</li>
+						<li>There is a list of all Echoes you have saved</li>
+					</ul>
+					<h3>Home</h3>
+					<ul>
+						<li>Will display three Echoes randomly, choosing 3 from a pool of all default Echoes and user-created Echoes</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel myPanel">
+			<div class="heading">
+				<div class="row">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwentysix"><span class="headFont">
+						<div class="col-xs-9">I DID IT</div>
+						<div class="col-xs-3 text-right">8/10/16 Notes</div>
+					</span></a>
+				</div>
+			</div>
+			<div id="accordionTwentysix" class="panel-collapse collapse">
+				<div class="body">
+					<p><h3>YEESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS</h3></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel myPanel">
+			<div class="heading">
+				<div class="row">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwentyfive"><span class="headFont">
+						<div class="col-xs-9">DIMM2</div>
+						<div class="col-xs-3 text-right">8/3/16 Notes</div>
+					</span></a>
+				</div>
+			</div>
+			<div id="accordionTwentyfive" class="panel-collapse collapse">
+				<div class="body">
+					<em><p>&emsp;Got some feedback about CSS. Color is very unsaturated on my work laptop, turns out some of the colors are pretty intense on most other displays.</p>
+					<p>&emsp;Goals are still: Finish Echo Chamber. Learn Angular.js. Make personal website with Angular.js.</p>
+					<br>
+					<p>&emsp;I guess I am sitting on a low point right now. I am so tired. Really had to will myself to open up Sublime Text today. Progress is so, so slow and it's discouraging. I may not be able to reasonably apply for a job until Spring? In which case I'll be competing with college grads with degrees? The idea of being compared like that is a little anxiety-inducing.</p>
+					<p>&emsp;I guess there are a lot of unknowns and I guess I'm tired of having to deal with unknowns.</p>
+					<p>&emsp;I mean. Every unknown is an opportunity to learn, which is great, and I get that and I respect that and I've experienced the good of that.</p>
+					<p>&emsp;But it's just like... I dunno.</p>
+					<p>&emsp;I guess wondering if and when you're going to be successful or not, and constantly having to make sure you're doing the right thing? It gets sorta heavy sometimes.</p></em>
+					<hr>
+					<p><h4>12:30</h4></p>
+					<h3>Global</h3>
+					<ul>
+						<li>Minor color tweaks</li>
+					</ul>
+					<h3>Blog</h3>
+					<ul>
+						<li><strong>So Long, Moon Moon:</strong> Moon background image removed</li>
+					</ul>
+					<h3>Sandbox</h3>
+					<ul>
+						<li><strong>Asking the Real Questions:</strong> Removed "Why" bar</li>
+					</ul>
+					<br>
+					<em><p>&emsp;So I am thinking it's about time for me to take another break from my code and find some more coding lessons/challenges. I could keep trying to think of a solution, and I'd eventually get there (feels like I'm real close), but the slog doesn't seem worth it when I could be spending that time getting a fresh perspective.</p>
+					<p>So what I'm starting to see is that being able to handle frustration and become accustomed to brick walls are vital parts of a programmer's skillset. I don't know if my approach to come back to it later is good or bad practice, but it seems like the quickest way for me to move forward right now.</p></em>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel myPanel">
+			<div class="heading">
+				<div class="row">
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwentyfour"><span class="headFont">
+						<div class="col-xs-9">A Week Spent Under the Hood</div>
+						<div class="col-xs-3 text-right">8/2/16 Notes</div>
+					</span></a>
+				</div>
+			</div>
+			<div id="accordionTwentyfour" class="panel-collapse collapse">
+				<div class="body">
+					<em><p>&emsp;Last week was marked by radio silence. This doesn't mean I spent no time working on the website, this just means most of the work isn't visible since most of the work done was re-factoring code to make it more organized and efficient.</p>
+					<p>&emsp;So after a week's worth of work, I'm thinking the goal that I had set out to accomplish with this project is either not possible with just client-side Javascript, or just far outside of my scope. I think I'll make it so that a user can have a finite number of reviews saved. I'm thinking the code won't be too pretty but I just can't figure out how to save and store a lot of user-input while re-using the same code. Here's a small changelog of the more obvious changes that have happened over the course of last week.</p></em>
+					<hr>
+					<p><h4>14:30</h4></p>
+					<h3>Sandbox</h3>
+					<ul>
+						<li>Username code refactored</li>
+						<li>Ability to set and display Username and Userpic restored</li>
+						<li>Users may also now set a "Description"</li>
+						<li><strong>PUT IT ALL TOGETHER AND WHAT DO YOU GET:</strong> The last panel at the bottom of the page takes the Username, Userpic, and User Description and makes a panel similar to the rest of the panels on the site. "Save" button doesn't seem to work</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
 		<div class="myPanel month">
 			July
@@ -50,18 +204,61 @@
 		<div class="panel myPanel">
 			<div class="heading">
 				<div class="row">
-					<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwentytwo"><span class="headFont">
-						<div class="col-xs-9">More To Do</div>
-						<div class="col-xs-3 text-right">7/24/16 Notes</div>
+					<a data-toggle="collapse" data-parent="#accordion" href="#accordionTwentythree"><span class="headFont">
+						<div class="col-xs-9">FizzBuzz'd</div>
+						<div class="col-xs-3 text-right">7/25/16 Notes</div>
 					</span></a>
 				</div>
 			</div>
-			<div id="accordionTwentytwo" class="panel-collapse collapse in">
+			<div id="accordionTwentythree" class="panel-collapse collapse">
 				<div class="body">
-					<p><h4>21:00</h4></p>
-					<em><p>&emsp;No patch notes today, still focusing on Codecademy.</p>
-					<p>&emsp;Just adding more to my to do - Add another widget to the Sandbox utilizing a <code>while</code> loop. Haven't really messed with one yet.</p>
-					<p>&emsp;After about five seasons of being a filthy casual and playing 10 placement matches before logging off until the next year, I finally reached Silver in League of Legends. W21/L7 is a pretty good record, right?</p></em>
+					<p><h4>10:00</h4></p>
+					<em><p>&emsp;Learned about <code>isNaN</code>, should add this to calculator app.</p>
+					<p>&emsp;Learned about switches, should experiment with it.</p>
+					<p>&emsp;Learning some things about creating objects and code structure, bringing me closer to where I wanted to be.</p></em>
+					<hr>
+					<p><strong>&emsp;Completed the "FizzBuzz" test:</strong></p>
+					<div style="background-color:rgba(255,255,255,.9); padding: 10px 0px 10px 20px;margin:auto;line-height:5px">
+					<p>for(i = 1; i < 21; i++){</p>
+    				<p>&emsp;if(i % 3 === 0 && i % 5 === 0){</p>
+        			<p>&emsp;&emsp;console.log("FizzBuzz");</p>
+    				<p>&emsp;} else if (i % 3 === 0 || i % 5 === 0) {</p>
+       				<p>&emsp;&emsp;if(i % 5 != 0){</p>
+            		<p>&emsp;&emsp;&emsp;console.log("Fizz");</p>
+        			<p>&emsp;&emsp;} else {</p>
+            		<p>&emsp;&emsp;&emsp;console.log("Buzz");</p>
+      		  		<p>&emsp;&emsp;}</p>
+    				<p>&emsp;} else {</p>
+        			<p>&emsp;&emsp;console.log(i);</p>
+    				<p>&emsp;}</p>
+					<p>}</p>
+					</div>
+					<br>
+					<p>The FizzBuzz test is this: List every number from 1 to 20 (or 100, or however many is desired). Every multiple of 3 is replaced with the word "Fizz". Every multiple of 5 is replaced with the word "Buzz". Every multiple of both 3 and 5 is replaced with the word "FizzBuzz".</p>
+					<p>I read a couple places that knowing how to do the FizzBuzz test is one of the things you should know if you're pursuing a career in coding? This is pretty easy stuff, so...? I guess knowing this is good.</p>
+					<p><h4>15:00</h4></p>
+					<center><img src="http://i.imgur.com/kIF3aM1.png" style="border:1px solid #000000;border-radius:20px; opacity: 0.9;max-width: 100%; height:auto"><br>
+					<p>Done with Codecademy's Javascript courses!</p></center>
+					<p>So... I've got a few TODO items to hit still. From here I can start working on those, or start learning another language like C++ to continue learning foundations, or I can go ahead and start on Angular.js...</p>
+					<p>Hmmmm. I think I should start going for those TODO items. That way I can work to apply the knowledge I just learned while it's fresh - I'd hate to just kind of forget what I got out of those lessons.</p>
+					<h3>Sandbox</h3>
+						<ul>
+							<li><strong>FINALLY DID SOMETHING:</strong> Calculator app now has a message for NaN inputs</li>
+							<li><strong>I LEARNED ABOUT IT SO I SHOULD SHOW IT:</strong> Modulo operator added to Calculator app</li>
+						</ul>
+					<p><h4>16:00</h4></p>
+					<em><p>&emsp;Oh, well, unless I'm mistaken, adding <code>isNan()</code> and the Modulo Operator (%) to my Calculator were the two easiest things on my list. Everything after involves heavy code structure... stuff. I am PRETTY sure of this, my 7/24 notes I guess I didn't push to GitHub so I'll find out later when I have access to the computer that blog post is on.</p>
+					<p>&emsp;Anyhow, once I get cracking on the heavier Javascript stuff and get the Home Page working as intended... I mean I guess that's it before this first project is done. Which is crazy - almost two months have flown by since I started by putting plain text onto a .html file. Am I going through this stuff pretty fast? Am I keeping about average pace? Or, after two months of self-paced learning, should I be a good deal further ahead? I guess I don't really have a way of knowing?</p></em>
+					<strong>HALF YEAR PLAN:</strong>
+					<ul>
+						<li>Re-skim through Codecademy's Javascript course, make sure I know all the material and establish plans to build all I've learned into this website</li>
+						<li>Complete Echo Chamber project</li>
+						<li>Split Echo Chamber project from personal site, continue moving forward with personal blog but tuck Echo Chamber away into portfolio</li>
+						<li>Begin learning another language (C++? Ruby?) / Begin learning a framework (Angular.js) (start one after reaching stopping point with the other)</li>
+						<li>Start and complete at least two more solo projects similar in scale to Echo Chamber</li>
+						<li>Start at least two group projects of any type to become familiar with working in a professional group setting</li>
+						<li>Begin Computer Science career</li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -101,7 +298,7 @@
 					<br>
 					This selects the 2nd column of the second row in the table. Neat!
 					<p><h4>13:45</h4></p>
-					<center><img src="http://i.imgur.com/dkirfpl.png" style="border:1px solid #000000;border-radius:20px; opacity: 0.9"><br>
+					<center><img src="http://i.imgur.com/dkirfpl.png" style="border:1px solid #000000;border-radius:20px; opacity: 0.9;max-width: 100%; height:auto"><br>
 					<p>Aaand done! Now I can go bone up on my data structures.</p></center>
 
 					<p><h4>20:00</h4></p>
@@ -842,7 +1039,7 @@
 		<footer>
 			<hr>
 			<div class="footer">
-				<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>  2016 pls no stealing my imaginary website <br> Best viewed/Most likely to function in the latest version of Google Chrome or Mozilla Firefox
+				<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> David Campbell 2017 pls no stealing my imaginary website <br> Best viewed/Most likely to function in the latest version of Google Chrome or Mozilla Firefox
 			</div>
 		</footer>
 
